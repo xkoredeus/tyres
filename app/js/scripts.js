@@ -1,35 +1,33 @@
-
-$(function() {
+// $(() => {
     // $(window).on('load', function () {
     //     $('.preloader__wrp').fadeOut();
     // });
     // setTimeout(function () {
     //     $('.preloader__wrp').fadeOut();
     // }, 4000);
-    $('.js-descr-link').on('click', function () {
-        $('html, body').animate({
-            scrollTop: $("#profit").offset().top - 50
-        }, 700);
-    });
-    $('.banner__descr-link').on('click', function () {
-        $('html, body').animate({
-            scrollTop: $("#profit").offset().top - 50
-        }, 700);
-    });
-    $('.js-popup__open').on('click', function () {
-        $('body').addClass('menu-open');
-    });
-    $('.js-popup__close').on('click', function () {
-        $('body').removeClass('menu-open');
-    });
-    $('.js-banner__overlay').on('click', function () {
-        $('body').removeClass('menu-open');
-    });
+// });
+$(() => {
+   // $('.banner__descr-link').on('click', function () {
+   //      $('html, body').animate({
+   //          scrollTop: $("#profit").offset().top - 50
+   //      }, 700);
+   //  });
+   //  $('.js-popup__open').on('click', function () {
+   //      $('body').addClass('menu-open');
+   //  });
+   //  $('.js-popup__close').on('click', function () {
+   //      $('body').removeClass('menu-open');
+   //  });
+   //  $('.js-banner__overlay').on('click', function () {
+   //      $('body').removeClass('menu-open');
+   //  });
+
     //Закрываем AjaxForm popup после успешной отправки
     // $(document).on('af_complete', function(event,res) {
     //   if(res.success) parent.$.fancybox.close();
     // });
-
+});
+$(() => {
     // let tl0   = new TimelineMax()
     //     tl1p1 = new TimelineMax()
     //     tl1p2 = new TimelineMax();
@@ -62,4 +60,36 @@ $(function() {
     //     triggerElement: ".banner__descr",
     //     triggerHook: 0.4,
     // });
+});
+$(() => {
+    $(".js-select").select2({
+        language: "ru",
+        minimumResultsForSearch: -1
+    });
+});
+
+$(() => {
+  $('.card__list').owlCarousel({
+    nav: true,
+    loop: false,
+    smartSpeed: 800,
+    startPosition: 0,
+    dots: false,
+    margin: 15,
+    navText: ["<svg width='43' height='8' viewBox='0 0 43 8' xmlns='http://www.w3.org/2000/svg'><path d='M43 4L1.5 4M1.5 4L4.5 7M1.5 4L4.5 1'/></svg>","<svg width='43' height='8' viewBox='0 0 43 8' xmlns='http://www.w3.org/2000/svg'><path d='M2.62268e-07 4L41.5 4M41.5 4L38.5 7M41.5 4L38.5 1'/></svg>"],
+    responsive : {
+      0   : {
+          items: 1,
+      },
+      600 : {
+          items: 2,
+      },
+      900 : {
+          items: 3,
+      },
+      1200 : {
+          items: 4,
+      }
+    },
+  });
 });

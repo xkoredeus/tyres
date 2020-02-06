@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<title>New Project</title>
 	<link rel="stylesheet" href="css/libs.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -78,7 +79,7 @@
 			</button>
 		</aside>
 		<div class="content">
-			<div class="banner">
+			<section class="banner">
 				<div class="banner__top">
 					<div class="banner__promo-wrp">
 						<div class="banner__promo">
@@ -157,16 +158,408 @@
 						</div>
 					</div>
 					<div class="filter__item">
-						Летние
+						<div class="filter__item-in">
+							<div class="filter__item-top">
+								<div class="filter__item-ttl">Зимние. <br> Все</div>
+								<label class="filter__switch-label">
+									<input type="checkbox" class="filter__switch">
+									<div class="filter__switch-icon-wrap">
+										<svg class="filter__switch-icon filter__switch-icon--show" width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.14073 9C2.25002 9.18887 2.39492 9.42957 2.57441 9.70749C3.03543 10.4213 3.71816 11.3706 4.60454 12.3161C6.39552 14.2265 8.89949 16 12 16C15.1005 16 17.6045 14.2265 19.3955 12.3161C20.2818 11.3706 20.9646 10.4213 21.4256 9.70749C21.6051 9.42957 21.7499 9.18887 21.8592 9C21.7499 8.81113 21.6051 8.57043 21.4256 8.29251C20.9646 7.57867 20.2818 6.62939 19.3955 5.68393C17.6045 3.77355 15.1005 2 12 2C8.89949 2 6.39552 3.77355 4.60454 5.68393C3.71816 6.62939 3.03543 7.57867 2.57441 8.29251C2.39492 8.57043 2.25002 8.81113 2.14073 9ZM23 9C23.8944 8.55279 23.8941 8.55209 23.8941 8.55209L23.8924 8.54886L23.889 8.54205L23.8776 8.51984C23.8681 8.50129 23.8546 8.47532 23.8372 8.44244C23.8024 8.37671 23.752 8.28323 23.686 8.16599C23.5542 7.93164 23.3601 7.60153 23.1057 7.20749C22.5979 6.42133 21.8432 5.37061 20.8545 4.31607C18.8955 2.22645 15.8995 0 12 0C8.10047 0 5.10448 2.22645 3.14546 4.31607C2.15683 5.37061 1.40206 6.42133 0.89433 7.20749C0.639845 7.60153 0.445767 7.93164 0.313947 8.16599C0.247999 8.28323 0.197519 8.37671 0.162732 8.44244C0.145336 8.47532 0.131864 8.50129 0.122327 8.51984L0.110974 8.54205L0.107526 8.54886L0.106366 8.55121C0.106366 8.55121 0.105555 8.55279 0.999982 9L0.105573 8.5528C-0.0351909 8.83432 -0.0351909 9.16568 0.105573 9.4472L0.999982 9C0.105555 9.44721 0.105573 9.4472 0.105573 9.4472L0.107526 9.45114L0.110974 9.45795L0.122327 9.48016C0.131864 9.49871 0.145336 9.52468 0.162732 9.55756C0.197519 9.62329 0.247999 9.71677 0.313947 9.83401C0.445767 10.0684 0.639845 10.3985 0.89433 10.7925C1.40206 11.5787 2.15683 12.6294 3.14546 13.6839C5.10448 15.7735 8.10047 18 12 18C15.8995 18 18.8955 15.7735 20.8545 13.6839C21.8432 12.6294 22.5979 11.5787 23.1057 10.7925C23.3601 10.3985 23.5542 10.0684 23.686 9.83401C23.752 9.71677 23.8024 9.62329 23.8372 9.55756C23.8546 9.52468 23.8681 9.49871 23.8776 9.48016L23.889 9.45795L23.8936 9.44879C23.8936 9.44879 23.8944 9.44721 23 9ZM23 9L23.8944 9.4472C24.0352 9.16568 24.0348 8.83362 23.8941 8.55209L23 9Z" fill="#DFDFDF"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.8954 7 9.99998 7.89543 9.99998 9C9.99998 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7ZM7.99998 9C7.99998 6.79086 9.79084 5 12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79084 13 7.99998 11.2091 7.99998 9Z" fill="#DFDFDF"/>
+										</svg>
+										<svg class="filter__switch-icon filter__switch-icon--not" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.14073 12C2.25002 12.1889 2.39492 12.4296 2.57441 12.7075C3.03543 13.4213 3.71816 14.3706 4.60454 15.3161C6.39552 17.2265 8.89949 19 12 19C15.1005 19 17.6045 17.2265 19.3955 15.3161C20.2818 14.3706 20.9646 13.4213 21.4256 12.7075C21.6051 12.4296 21.7499 12.1889 21.8592 12C21.7499 11.8111 21.6051 11.5704 21.4256 11.2925C20.9646 10.5787 20.2818 9.62939 19.3955 8.68393C17.6045 6.77355 15.1005 5 12 5C8.89949 5 6.39552 6.77355 4.60454 8.68393C3.71816 9.62939 3.03543 10.5787 2.57441 11.2925C2.39492 11.5704 2.25002 11.8111 2.14073 12ZM23 12C23.8944 11.5528 23.8941 11.5521 23.8941 11.5521L23.8924 11.5489L23.889 11.5421L23.8776 11.5198C23.8681 11.5013 23.8546 11.4753 23.8372 11.4424C23.8024 11.3767 23.752 11.2832 23.686 11.166C23.5542 10.9316 23.3601 10.6015 23.1057 10.2075C22.5979 9.42133 21.8432 8.37061 20.8545 7.31607C18.8955 5.22645 15.8995 3 12 3C8.10047 3 5.10448 5.22645 3.14546 7.31607C2.15683 8.37061 1.40206 9.42133 0.89433 10.2075C0.639845 10.6015 0.445767 10.9316 0.313947 11.166C0.247999 11.2832 0.197519 11.3767 0.162732 11.4424C0.145336 11.4753 0.131864 11.5013 0.122327 11.5198L0.110974 11.5421L0.107526 11.5489L0.106366 11.5512C0.106366 11.5512 0.105555 11.5528 0.999982 12L0.105573 11.5528C-0.0351909 11.8343 -0.0351909 12.1657 0.105573 12.4472L0.999982 12C0.105555 12.4472 0.105573 12.4472 0.105573 12.4472L0.107526 12.4511L0.110974 12.4579L0.122327 12.4802C0.131864 12.4987 0.145336 12.5247 0.162732 12.5576C0.197519 12.6233 0.247999 12.7168 0.313947 12.834C0.445767 13.0684 0.639845 13.3985 0.89433 13.7925C1.40206 14.5787 2.15683 15.6294 3.14546 16.6839C5.10448 18.7735 8.10047 21 12 21C15.8995 21 18.8955 18.7735 20.8545 16.6839C21.8432 15.6294 22.5979 14.5787 23.1057 13.7925C23.3601 13.3985 23.5542 13.0684 23.686 12.834C23.752 12.7168 23.8024 12.6233 23.8372 12.5576C23.8546 12.5247 23.8681 12.4987 23.8776 12.4802L23.889 12.4579L23.8936 12.4488C23.8936 12.4488 23.8944 12.4472 23 12ZM23 12L23.8944 12.4472C24.0352 12.1657 24.0348 11.8336 23.8941 11.5521L23 12Z" fill="#DFDFDF"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12 10C10.8954 10 9.99998 10.8954 9.99998 12C9.99998 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10ZM7.99998 12C7.99998 9.79086 9.79084 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79084 16 7.99998 14.2091 7.99998 12Z" fill="#DFDFDF"/>
+											<path d="M12 21C4.49998 21 0.299988 12.8 0.0999878 12.4C-1.22041e-05 12.1 -1.22041e-05 11.8 0.0999878 11.5C1.39999 9.10001 3.19998 7 5.49998 5.3C5.89998 4.9 6.49998 5.00001 6.89998 5.50001C7.19998 5.90001 7.19999 6.60001 6.69999 6.90001C4.79999 8.30001 3.29999 10 2.09999 12C2.99999 13.6 6.59998 19 12 19C13.9 19 15.8 18.3 17.3 17.1C17.7 16.8 18.4 16.9 18.7 17.3C19 17.7 18.9 18.4 18.5 18.7C16.7 20.2 14.4 21 12 21ZM20.8 16.2C20.6 16.2 20.3 16.1 20.2 16C19.8 15.6 19.7 15 20.1 14.6C20.8 13.8 21.4 13 21.9 12.1C21 10.5 17.4 5.10002 12 5.10002C11.4 5.10002 10.7 5.2 10.1 5.3C9.59999 5.3 9.09998 5.00001 8.89998 4.50001C8.69998 4.00001 9.09999 3.4 9.59999 3.3C10.4 3.1 11.2 3.00001 12 3.00001C19.5 3.00001 23.7 11.2 23.9 11.6C24 11.9 24 12.2 23.9 12.5C23.3 13.7 22.5 14.8 21.6 15.9C21.4 16.1 21.1 16.2 20.8 16.2ZM11.9 16.1C10.9 16.1 9.89999 15.7 9.19999 15C8.39999 14.3 7.99998 13.3 7.89998 12.2C7.89998 11.1 8.19998 10.1 8.99998 9.3C9.09998 9.2 9.09999 9.20002 9.19999 9.10002C9.59999 8.70002 10.2 8.70002 10.6 9.10002C11 9.50002 11 10.1 10.6 10.5L10.5 10.6C10.1 11 9.89998 11.5 9.99998 12C9.99998 12.5 10.2 13 10.6 13.4C11.4 14.2 12.7 14.1 13.4 13.3C13.8 12.9 14.4 12.9 14.8 13.3C15.2 13.7 15.2 14.3 14.8 14.7C14.1 15.6 13 16.1 11.9 16.1Z" fill="#DFDFDF"/>
+											<path d="M23 24C22.7 24 22.5 23.9 22.3 23.7L0.3 1.70002C-0.1 1.30002 -0.1 0.7 0.3 0.3C0.7 -0.1 1.29999 -0.1 1.69999 0.3L23.7 22.3C24.1 22.7 24.1 23.3 23.7 23.7C23.5 23.9 23.3 24 23 24Z" fill="#DFDFDF"/>
+										</svg>
+									</div>
+								</label>
+							</div>
+							<div class="filter__rad-list">
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R15</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R16</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R17</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R18</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R19</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R20</div>
+								</label>
+							</div>
+							<button class="filter__btn" type="button">
+								<span class="filter__btn-circle">
+									<svg width="8" height="43" viewBox="0 0 8 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4 -1.31134e-07L4 41.5M4 41.5L7 38.5M4 41.5L0.999998 38.5"/>
+									</svg>
+								</span>
+								<span class="filter__btn-text">перейти</span>
+							</button>
+							<div class="filter__img" style="background-image: url('img/tyre__img_2.png');"></div>
+						</div>
 					</div>
 					<div class="filter__item">
-						Летние
+						<div class="filter__item-in">
+							<div class="filter__item-top">
+								<div class="filter__item-ttl">Зимние. <br> Шипы</div>
+								<label class="filter__switch-label">
+									<input type="checkbox" class="filter__switch">
+									<div class="filter__switch-icon-wrap">
+										<svg class="filter__switch-icon filter__switch-icon--show" width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.14073 9C2.25002 9.18887 2.39492 9.42957 2.57441 9.70749C3.03543 10.4213 3.71816 11.3706 4.60454 12.3161C6.39552 14.2265 8.89949 16 12 16C15.1005 16 17.6045 14.2265 19.3955 12.3161C20.2818 11.3706 20.9646 10.4213 21.4256 9.70749C21.6051 9.42957 21.7499 9.18887 21.8592 9C21.7499 8.81113 21.6051 8.57043 21.4256 8.29251C20.9646 7.57867 20.2818 6.62939 19.3955 5.68393C17.6045 3.77355 15.1005 2 12 2C8.89949 2 6.39552 3.77355 4.60454 5.68393C3.71816 6.62939 3.03543 7.57867 2.57441 8.29251C2.39492 8.57043 2.25002 8.81113 2.14073 9ZM23 9C23.8944 8.55279 23.8941 8.55209 23.8941 8.55209L23.8924 8.54886L23.889 8.54205L23.8776 8.51984C23.8681 8.50129 23.8546 8.47532 23.8372 8.44244C23.8024 8.37671 23.752 8.28323 23.686 8.16599C23.5542 7.93164 23.3601 7.60153 23.1057 7.20749C22.5979 6.42133 21.8432 5.37061 20.8545 4.31607C18.8955 2.22645 15.8995 0 12 0C8.10047 0 5.10448 2.22645 3.14546 4.31607C2.15683 5.37061 1.40206 6.42133 0.89433 7.20749C0.639845 7.60153 0.445767 7.93164 0.313947 8.16599C0.247999 8.28323 0.197519 8.37671 0.162732 8.44244C0.145336 8.47532 0.131864 8.50129 0.122327 8.51984L0.110974 8.54205L0.107526 8.54886L0.106366 8.55121C0.106366 8.55121 0.105555 8.55279 0.999982 9L0.105573 8.5528C-0.0351909 8.83432 -0.0351909 9.16568 0.105573 9.4472L0.999982 9C0.105555 9.44721 0.105573 9.4472 0.105573 9.4472L0.107526 9.45114L0.110974 9.45795L0.122327 9.48016C0.131864 9.49871 0.145336 9.52468 0.162732 9.55756C0.197519 9.62329 0.247999 9.71677 0.313947 9.83401C0.445767 10.0684 0.639845 10.3985 0.89433 10.7925C1.40206 11.5787 2.15683 12.6294 3.14546 13.6839C5.10448 15.7735 8.10047 18 12 18C15.8995 18 18.8955 15.7735 20.8545 13.6839C21.8432 12.6294 22.5979 11.5787 23.1057 10.7925C23.3601 10.3985 23.5542 10.0684 23.686 9.83401C23.752 9.71677 23.8024 9.62329 23.8372 9.55756C23.8546 9.52468 23.8681 9.49871 23.8776 9.48016L23.889 9.45795L23.8936 9.44879C23.8936 9.44879 23.8944 9.44721 23 9ZM23 9L23.8944 9.4472C24.0352 9.16568 24.0348 8.83362 23.8941 8.55209L23 9Z" fill="#DFDFDF"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.8954 7 9.99998 7.89543 9.99998 9C9.99998 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7ZM7.99998 9C7.99998 6.79086 9.79084 5 12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79084 13 7.99998 11.2091 7.99998 9Z" fill="#DFDFDF"/>
+										</svg>
+										<svg class="filter__switch-icon filter__switch-icon--not" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.14073 12C2.25002 12.1889 2.39492 12.4296 2.57441 12.7075C3.03543 13.4213 3.71816 14.3706 4.60454 15.3161C6.39552 17.2265 8.89949 19 12 19C15.1005 19 17.6045 17.2265 19.3955 15.3161C20.2818 14.3706 20.9646 13.4213 21.4256 12.7075C21.6051 12.4296 21.7499 12.1889 21.8592 12C21.7499 11.8111 21.6051 11.5704 21.4256 11.2925C20.9646 10.5787 20.2818 9.62939 19.3955 8.68393C17.6045 6.77355 15.1005 5 12 5C8.89949 5 6.39552 6.77355 4.60454 8.68393C3.71816 9.62939 3.03543 10.5787 2.57441 11.2925C2.39492 11.5704 2.25002 11.8111 2.14073 12ZM23 12C23.8944 11.5528 23.8941 11.5521 23.8941 11.5521L23.8924 11.5489L23.889 11.5421L23.8776 11.5198C23.8681 11.5013 23.8546 11.4753 23.8372 11.4424C23.8024 11.3767 23.752 11.2832 23.686 11.166C23.5542 10.9316 23.3601 10.6015 23.1057 10.2075C22.5979 9.42133 21.8432 8.37061 20.8545 7.31607C18.8955 5.22645 15.8995 3 12 3C8.10047 3 5.10448 5.22645 3.14546 7.31607C2.15683 8.37061 1.40206 9.42133 0.89433 10.2075C0.639845 10.6015 0.445767 10.9316 0.313947 11.166C0.247999 11.2832 0.197519 11.3767 0.162732 11.4424C0.145336 11.4753 0.131864 11.5013 0.122327 11.5198L0.110974 11.5421L0.107526 11.5489L0.106366 11.5512C0.106366 11.5512 0.105555 11.5528 0.999982 12L0.105573 11.5528C-0.0351909 11.8343 -0.0351909 12.1657 0.105573 12.4472L0.999982 12C0.105555 12.4472 0.105573 12.4472 0.105573 12.4472L0.107526 12.4511L0.110974 12.4579L0.122327 12.4802C0.131864 12.4987 0.145336 12.5247 0.162732 12.5576C0.197519 12.6233 0.247999 12.7168 0.313947 12.834C0.445767 13.0684 0.639845 13.3985 0.89433 13.7925C1.40206 14.5787 2.15683 15.6294 3.14546 16.6839C5.10448 18.7735 8.10047 21 12 21C15.8995 21 18.8955 18.7735 20.8545 16.6839C21.8432 15.6294 22.5979 14.5787 23.1057 13.7925C23.3601 13.3985 23.5542 13.0684 23.686 12.834C23.752 12.7168 23.8024 12.6233 23.8372 12.5576C23.8546 12.5247 23.8681 12.4987 23.8776 12.4802L23.889 12.4579L23.8936 12.4488C23.8936 12.4488 23.8944 12.4472 23 12ZM23 12L23.8944 12.4472C24.0352 12.1657 24.0348 11.8336 23.8941 11.5521L23 12Z" fill="#DFDFDF"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12 10C10.8954 10 9.99998 10.8954 9.99998 12C9.99998 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10ZM7.99998 12C7.99998 9.79086 9.79084 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79084 16 7.99998 14.2091 7.99998 12Z" fill="#DFDFDF"/>
+											<path d="M12 21C4.49998 21 0.299988 12.8 0.0999878 12.4C-1.22041e-05 12.1 -1.22041e-05 11.8 0.0999878 11.5C1.39999 9.10001 3.19998 7 5.49998 5.3C5.89998 4.9 6.49998 5.00001 6.89998 5.50001C7.19998 5.90001 7.19999 6.60001 6.69999 6.90001C4.79999 8.30001 3.29999 10 2.09999 12C2.99999 13.6 6.59998 19 12 19C13.9 19 15.8 18.3 17.3 17.1C17.7 16.8 18.4 16.9 18.7 17.3C19 17.7 18.9 18.4 18.5 18.7C16.7 20.2 14.4 21 12 21ZM20.8 16.2C20.6 16.2 20.3 16.1 20.2 16C19.8 15.6 19.7 15 20.1 14.6C20.8 13.8 21.4 13 21.9 12.1C21 10.5 17.4 5.10002 12 5.10002C11.4 5.10002 10.7 5.2 10.1 5.3C9.59999 5.3 9.09998 5.00001 8.89998 4.50001C8.69998 4.00001 9.09999 3.4 9.59999 3.3C10.4 3.1 11.2 3.00001 12 3.00001C19.5 3.00001 23.7 11.2 23.9 11.6C24 11.9 24 12.2 23.9 12.5C23.3 13.7 22.5 14.8 21.6 15.9C21.4 16.1 21.1 16.2 20.8 16.2ZM11.9 16.1C10.9 16.1 9.89999 15.7 9.19999 15C8.39999 14.3 7.99998 13.3 7.89998 12.2C7.89998 11.1 8.19998 10.1 8.99998 9.3C9.09998 9.2 9.09999 9.20002 9.19999 9.10002C9.59999 8.70002 10.2 8.70002 10.6 9.10002C11 9.50002 11 10.1 10.6 10.5L10.5 10.6C10.1 11 9.89998 11.5 9.99998 12C9.99998 12.5 10.2 13 10.6 13.4C11.4 14.2 12.7 14.1 13.4 13.3C13.8 12.9 14.4 12.9 14.8 13.3C15.2 13.7 15.2 14.3 14.8 14.7C14.1 15.6 13 16.1 11.9 16.1Z" fill="#DFDFDF"/>
+											<path d="M23 24C22.7 24 22.5 23.9 22.3 23.7L0.3 1.70002C-0.1 1.30002 -0.1 0.7 0.3 0.3C0.7 -0.1 1.29999 -0.1 1.69999 0.3L23.7 22.3C24.1 22.7 24.1 23.3 23.7 23.7C23.5 23.9 23.3 24 23 24Z" fill="#DFDFDF"/>
+										</svg>
+									</div>
+								</label>
+							</div>
+							<div class="filter__rad-list">
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R15</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R16</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R17</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R18</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R19</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R20</div>
+								</label>
+							</div>
+							<button class="filter__btn" type="button">
+								<span class="filter__btn-circle">
+									<svg width="8" height="43" viewBox="0 0 8 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4 -1.31134e-07L4 41.5M4 41.5L7 38.5M4 41.5L0.999998 38.5"/>
+									</svg>
+								</span>
+								<span class="filter__btn-text">перейти</span>
+							</button>
+							<div class="filter__img" style="background-image: url('img/tyre__img_3.png');"></div>
+						</div>
 					</div>
 					<div class="filter__item">
-						Летние
+						<div class="filter__item-in">
+							<div class="filter__item-top">
+								<div class="filter__item-ttl">Зимние. <br> Не шипы</div>
+								<label class="filter__switch-label">
+									<input type="checkbox" class="filter__switch">
+									<div class="filter__switch-icon-wrap">
+										<svg class="filter__switch-icon filter__switch-icon--show" width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.14073 9C2.25002 9.18887 2.39492 9.42957 2.57441 9.70749C3.03543 10.4213 3.71816 11.3706 4.60454 12.3161C6.39552 14.2265 8.89949 16 12 16C15.1005 16 17.6045 14.2265 19.3955 12.3161C20.2818 11.3706 20.9646 10.4213 21.4256 9.70749C21.6051 9.42957 21.7499 9.18887 21.8592 9C21.7499 8.81113 21.6051 8.57043 21.4256 8.29251C20.9646 7.57867 20.2818 6.62939 19.3955 5.68393C17.6045 3.77355 15.1005 2 12 2C8.89949 2 6.39552 3.77355 4.60454 5.68393C3.71816 6.62939 3.03543 7.57867 2.57441 8.29251C2.39492 8.57043 2.25002 8.81113 2.14073 9ZM23 9C23.8944 8.55279 23.8941 8.55209 23.8941 8.55209L23.8924 8.54886L23.889 8.54205L23.8776 8.51984C23.8681 8.50129 23.8546 8.47532 23.8372 8.44244C23.8024 8.37671 23.752 8.28323 23.686 8.16599C23.5542 7.93164 23.3601 7.60153 23.1057 7.20749C22.5979 6.42133 21.8432 5.37061 20.8545 4.31607C18.8955 2.22645 15.8995 0 12 0C8.10047 0 5.10448 2.22645 3.14546 4.31607C2.15683 5.37061 1.40206 6.42133 0.89433 7.20749C0.639845 7.60153 0.445767 7.93164 0.313947 8.16599C0.247999 8.28323 0.197519 8.37671 0.162732 8.44244C0.145336 8.47532 0.131864 8.50129 0.122327 8.51984L0.110974 8.54205L0.107526 8.54886L0.106366 8.55121C0.106366 8.55121 0.105555 8.55279 0.999982 9L0.105573 8.5528C-0.0351909 8.83432 -0.0351909 9.16568 0.105573 9.4472L0.999982 9C0.105555 9.44721 0.105573 9.4472 0.105573 9.4472L0.107526 9.45114L0.110974 9.45795L0.122327 9.48016C0.131864 9.49871 0.145336 9.52468 0.162732 9.55756C0.197519 9.62329 0.247999 9.71677 0.313947 9.83401C0.445767 10.0684 0.639845 10.3985 0.89433 10.7925C1.40206 11.5787 2.15683 12.6294 3.14546 13.6839C5.10448 15.7735 8.10047 18 12 18C15.8995 18 18.8955 15.7735 20.8545 13.6839C21.8432 12.6294 22.5979 11.5787 23.1057 10.7925C23.3601 10.3985 23.5542 10.0684 23.686 9.83401C23.752 9.71677 23.8024 9.62329 23.8372 9.55756C23.8546 9.52468 23.8681 9.49871 23.8776 9.48016L23.889 9.45795L23.8936 9.44879C23.8936 9.44879 23.8944 9.44721 23 9ZM23 9L23.8944 9.4472C24.0352 9.16568 24.0348 8.83362 23.8941 8.55209L23 9Z" fill="#DFDFDF"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12 7C10.8954 7 9.99998 7.89543 9.99998 9C9.99998 10.1046 10.8954 11 12 11C13.1046 11 14 10.1046 14 9C14 7.89543 13.1046 7 12 7ZM7.99998 9C7.99998 6.79086 9.79084 5 12 5C14.2091 5 16 6.79086 16 9C16 11.2091 14.2091 13 12 13C9.79084 13 7.99998 11.2091 7.99998 9Z" fill="#DFDFDF"/>
+										</svg>
+										<svg class="filter__switch-icon filter__switch-icon--not" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M2.14073 12C2.25002 12.1889 2.39492 12.4296 2.57441 12.7075C3.03543 13.4213 3.71816 14.3706 4.60454 15.3161C6.39552 17.2265 8.89949 19 12 19C15.1005 19 17.6045 17.2265 19.3955 15.3161C20.2818 14.3706 20.9646 13.4213 21.4256 12.7075C21.6051 12.4296 21.7499 12.1889 21.8592 12C21.7499 11.8111 21.6051 11.5704 21.4256 11.2925C20.9646 10.5787 20.2818 9.62939 19.3955 8.68393C17.6045 6.77355 15.1005 5 12 5C8.89949 5 6.39552 6.77355 4.60454 8.68393C3.71816 9.62939 3.03543 10.5787 2.57441 11.2925C2.39492 11.5704 2.25002 11.8111 2.14073 12ZM23 12C23.8944 11.5528 23.8941 11.5521 23.8941 11.5521L23.8924 11.5489L23.889 11.5421L23.8776 11.5198C23.8681 11.5013 23.8546 11.4753 23.8372 11.4424C23.8024 11.3767 23.752 11.2832 23.686 11.166C23.5542 10.9316 23.3601 10.6015 23.1057 10.2075C22.5979 9.42133 21.8432 8.37061 20.8545 7.31607C18.8955 5.22645 15.8995 3 12 3C8.10047 3 5.10448 5.22645 3.14546 7.31607C2.15683 8.37061 1.40206 9.42133 0.89433 10.2075C0.639845 10.6015 0.445767 10.9316 0.313947 11.166C0.247999 11.2832 0.197519 11.3767 0.162732 11.4424C0.145336 11.4753 0.131864 11.5013 0.122327 11.5198L0.110974 11.5421L0.107526 11.5489L0.106366 11.5512C0.106366 11.5512 0.105555 11.5528 0.999982 12L0.105573 11.5528C-0.0351909 11.8343 -0.0351909 12.1657 0.105573 12.4472L0.999982 12C0.105555 12.4472 0.105573 12.4472 0.105573 12.4472L0.107526 12.4511L0.110974 12.4579L0.122327 12.4802C0.131864 12.4987 0.145336 12.5247 0.162732 12.5576C0.197519 12.6233 0.247999 12.7168 0.313947 12.834C0.445767 13.0684 0.639845 13.3985 0.89433 13.7925C1.40206 14.5787 2.15683 15.6294 3.14546 16.6839C5.10448 18.7735 8.10047 21 12 21C15.8995 21 18.8955 18.7735 20.8545 16.6839C21.8432 15.6294 22.5979 14.5787 23.1057 13.7925C23.3601 13.3985 23.5542 13.0684 23.686 12.834C23.752 12.7168 23.8024 12.6233 23.8372 12.5576C23.8546 12.5247 23.8681 12.4987 23.8776 12.4802L23.889 12.4579L23.8936 12.4488C23.8936 12.4488 23.8944 12.4472 23 12ZM23 12L23.8944 12.4472C24.0352 12.1657 24.0348 11.8336 23.8941 11.5521L23 12Z" fill="#DFDFDF"/>
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M12 10C10.8954 10 9.99998 10.8954 9.99998 12C9.99998 13.1046 10.8954 14 12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10ZM7.99998 12C7.99998 9.79086 9.79084 8 12 8C14.2091 8 16 9.79086 16 12C16 14.2091 14.2091 16 12 16C9.79084 16 7.99998 14.2091 7.99998 12Z" fill="#DFDFDF"/>
+											<path d="M12 21C4.49998 21 0.299988 12.8 0.0999878 12.4C-1.22041e-05 12.1 -1.22041e-05 11.8 0.0999878 11.5C1.39999 9.10001 3.19998 7 5.49998 5.3C5.89998 4.9 6.49998 5.00001 6.89998 5.50001C7.19998 5.90001 7.19999 6.60001 6.69999 6.90001C4.79999 8.30001 3.29999 10 2.09999 12C2.99999 13.6 6.59998 19 12 19C13.9 19 15.8 18.3 17.3 17.1C17.7 16.8 18.4 16.9 18.7 17.3C19 17.7 18.9 18.4 18.5 18.7C16.7 20.2 14.4 21 12 21ZM20.8 16.2C20.6 16.2 20.3 16.1 20.2 16C19.8 15.6 19.7 15 20.1 14.6C20.8 13.8 21.4 13 21.9 12.1C21 10.5 17.4 5.10002 12 5.10002C11.4 5.10002 10.7 5.2 10.1 5.3C9.59999 5.3 9.09998 5.00001 8.89998 4.50001C8.69998 4.00001 9.09999 3.4 9.59999 3.3C10.4 3.1 11.2 3.00001 12 3.00001C19.5 3.00001 23.7 11.2 23.9 11.6C24 11.9 24 12.2 23.9 12.5C23.3 13.7 22.5 14.8 21.6 15.9C21.4 16.1 21.1 16.2 20.8 16.2ZM11.9 16.1C10.9 16.1 9.89999 15.7 9.19999 15C8.39999 14.3 7.99998 13.3 7.89998 12.2C7.89998 11.1 8.19998 10.1 8.99998 9.3C9.09998 9.2 9.09999 9.20002 9.19999 9.10002C9.59999 8.70002 10.2 8.70002 10.6 9.10002C11 9.50002 11 10.1 10.6 10.5L10.5 10.6C10.1 11 9.89998 11.5 9.99998 12C9.99998 12.5 10.2 13 10.6 13.4C11.4 14.2 12.7 14.1 13.4 13.3C13.8 12.9 14.4 12.9 14.8 13.3C15.2 13.7 15.2 14.3 14.8 14.7C14.1 15.6 13 16.1 11.9 16.1Z" fill="#DFDFDF"/>
+											<path d="M23 24C22.7 24 22.5 23.9 22.3 23.7L0.3 1.70002C-0.1 1.30002 -0.1 0.7 0.3 0.3C0.7 -0.1 1.29999 -0.1 1.69999 0.3L23.7 22.3C24.1 22.7 24.1 23.3 23.7 23.7C23.5 23.9 23.3 24 23 24Z" fill="#DFDFDF"/>
+										</svg>
+									</div>
+								</label>
+							</div>
+							<div class="filter__rad-list">
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R15</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R16</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R17</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R18</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R19</div>
+								</label>
+								<label class="filter__rad-label">
+									<input type="checkbox">
+									<div class="filter__rad-item">R20</div>
+								</label>
+							</div>
+							<button class="filter__btn" type="button">
+								<span class="filter__btn-circle">
+									<svg width="8" height="43" viewBox="0 0 8 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M4 -1.31134e-07L4 41.5M4 41.5L7 38.5M4 41.5L0.999998 38.5"/>
+									</svg>
+								</span>
+								<span class="filter__btn-text">перейти</span>
+							</button>
+							<div class="filter__img" style="background-image: url('img/tyre__img_1.png');"></div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+			<section class="section">
+				<div class="section__in">
+					<div class="section__ttl">Шины б/у 15 дюймов</div>
+					<form class="section__filter">
+						<div class="section__filter-group">
+							<label class="section__filter-label">Ширина профиля:</label>
+							<select class="section__filter-select js-select">
+								<option value disabled selected hidden>Не выбрано</option>
+								<option value="25">25</option>
+								<option value="30">30</option>
+								<option value="35">35</option>
+								<option value="40">40</option>
+								<option value="45">45</option>
+								<option value="50">50</option>
+								<option value="55">55</option>
+								<option value="60">60</option>
+								<option value="65">65</option>
+								<option value="70">70</option>
+								<option value="75">75</option>
+							</select>
+						</div>
+						<div class="section__filter-group">
+							<label class="section__filter-label">Высота профиля:</label>
+							<select class="section__filter-select js-select">
+								<option value disabled selected hidden>Не выбрано</option>
+								<option value="25">25</option>
+								<option value="30">30</option>
+								<option value="35">35</option>
+								<option value="40">40</option>
+								<option value="45">45</option>
+								<option value="50">50</option>
+								<option value="55">55</option>
+								<option value="60">60</option>
+								<option value="65">65</option>
+								<option value="70">70</option>
+								<option value="75">75</option>
+							</select>
+						</div>
+						<div class="section__filter-group">
+							<label class="section__filter-label">Производитель:</label>
+							<select class="section__filter-select js-select">
+								<option value disabled selected hidden>Не выбрано</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+								<option value="Perelli">Perelli</option>
+							</select>
+						</div>
+						<div class="section__filter-group">
+							<label class="section__filter-label">Степень износа:</label>
+							<select class="section__filter-select js-select">
+								<option value disabled selected hidden>Не выбрано</option>
+								<option value="25">Низкая</option>
+								<option value="30">Низкая</option>
+								<option value="35">Низкая</option>
+								<option value="40">Низкая</option>
+							</select>
+						</div>
+					</form>
+					<div class="card__list owl-carousel">
+						<div class="card">
+							<img class="card__img" src="img/card__img_1.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_2.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_3.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_4.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_1.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_2.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_3.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+						<div class="card">
+							<img class="card__img" src="img/card__img_4.png" alt="Card image">
+							<div class="card__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+							<div class="card__info">
+								<div class="card__info-item">
+									<span>Ширина профиля:</span>
+									<span>245</span>
+								</div>
+								<div class="card__info-item">
+									<span>Высота профиля:</span>
+									<span>70</span>
+								</div>
+							</div>
+							<div class="card__labels">
+								<img class="card__logo" src="img/card__label.png" alt="Card label">
+								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
+							</div>
+							<div class="card__price">9000 ₽</div>
+							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
 	<div id="popup_call" class="popup__container" style="display:none">
@@ -190,6 +583,54 @@
 		</div>
 	</div>
 	<script src="js/libs.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+	<script>
+		$.fn.select2.amd.define('select2/i18n/ru',[],function () {
+			// Russian
+			return {
+				errorLoading: function () {
+					return 'Результат не может быть загружен.';
+				},
+				inputTooLong: function (args) {
+					var overChars = args.input.length - args.maximum;
+					var message = 'Пожалуйста, удалите ' + overChars + ' символ';
+					if (overChars >= 2 && overChars <= 4) {
+						message += 'а';
+					} else if (overChars >= 5) {
+						message += 'ов';
+					}
+					return message;
+				},
+				inputTooShort: function (args) {
+					var remainingChars = args.minimum - args.input.length;
+
+					var message = 'Пожалуйста, введите ' + remainingChars + ' или более символов';
+
+					return message;
+				},
+				loadingMore: function () {
+					return 'Загружаем ещё ресурсы…';
+				},
+				maximumSelected: function (args) {
+					var message = 'Вы можете выбрать ' + args.maximum + ' элемент';
+
+					if (args.maximum  >= 2 && args.maximum <= 4) {
+						message += 'а';
+					} else if (args.maximum >= 5) {
+						message += 'ов';
+					}
+
+					return message;
+				},
+				noResults: function () {
+				  return 'Ничего не найдено';
+				},
+				searching: function () {
+				  return 'Поиск…';
+				}
+			};
+		});
+	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>

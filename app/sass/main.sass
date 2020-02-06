@@ -35,18 +35,18 @@ $gr: #E5E5E5
 @mixin r($width)
 	@media only screen and (max-width: $width + "px")
 		@content
-
 body
+	position: relative
 	scroll-behavior: smooth
 	background-color: $gr
 	font-family: $ereg, sans-serif
 	color: $dark
 	font-size: 14px
 	line-height: 1.4
-	position: relative
 	-webkit-font-smoothing: antialiased
-	+r(1200)
-		font-size: 16px
+	overflow: hidden
+	height: 100vh
+	width: 100vw
 h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, a::selection, span::selection, div::selection, img::selection, mark::selection, ul::selection, li::selection
 	color: #fff
 	background-color: $dark
@@ -221,76 +221,16 @@ input[type="number"]
 		display: block
 		z-index: 2
 		+easeinout
-	//+r(1200)
-	//	padding: 10px 15px
-	//	min-width: 170px
-.list
-	&_circle
-		list-style-type: none
-		padding-left: 0
-		li
-			padding-left: 25px
-			position: relative
-			&
-				margin-bottom: 10px
-			&::before
-				content: ''
-				position: absolute
-				width: 8px
-				height: 8px
-				background-color: #EE414F
-				left: 0
-				top: 8px
-				border-radius: 50%
-	&_string
-		list-style-type: none
-		padding-left: 0
-		li
-			padding-left: 25px
-			position: relative
-			&
-				margin-bottom: 10px
-			&::before
-				content: ''
-				position: absolute
-				width: 12px
-				height: 1px
-				background-color: $dark
-				left: 0
-				top: 9px
-	&_num
-		padding-left: 0
-		counter-reset: list1
-		li
-			list-style-type: none
-			&
-				margin-bottom: 10px
-			&::before
-				counter-increment: list1
-				content: counter(list1)
-				color: $blue
-				font-size: 16px
-				margin-right: 15px
-.section
-	&_inner
-		padding: 60px 0
-		+r(1200)
-			padding: 40px 0
-	&__ttl
-		font-size: 60px
-		line-height: 1.1
-		letter-spacing: 1px
-		margin-bottom: 25px
-		text-transform: uppercase
-		+r(1200)
-			font-size: 28px
-	&__subttl
-		font-size: 38px
-		line-height: 1.2
-		letter-spacing: .5px
-		margin-bottom: 20px
-		+r(1200)
-			font-size: 24px
+	&--blue
+		span
+			color: #fff
+		&::before
+			border-color: $dark
+		&::after
+			background-color: $blue
+		&:hover
+			span
+				color: $dark
 .preloader
 	display: inline-block
 	position: relative
@@ -371,10 +311,12 @@ input[type="number"]
 	display: grid
 	grid-template-columns: repeat(12, 1fr)
 	grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
+	overflow: hidden
 .header
 	grid-column: span 12
 	display: grid
 	grid-template-columns: repeat(12, 1fr)
+	padding-right: 15px
 	&__logo
 		color: #fff
 		font-family: $ebold
@@ -431,7 +373,7 @@ input[type="number"]
 			.header__btn
 				&-in
 					&::after
-						right: -100%
+						right: -130%
 					span
 						color: $dark
 				&-arrow
@@ -446,7 +388,6 @@ input[type="number"]
 			width: 100%
 			height: 100px
 			padding: 15px 20px
-			overflow: hidden
 			display: flex
 			justify-content: center
 			align-items: center
@@ -462,9 +403,9 @@ input[type="number"]
 			&::after
 				content: ''
 				position: absolute
-				right: 0
+				right: -20%
 				top: 0
-				width: 100%
+				width: 120%
 				height: 100%
 				background-color: $blue
 				+easeinout
@@ -524,8 +465,8 @@ input[type="number"]
 	&::-webkit-scrollbar
 		width: 15px
 		&-track
-			background-color: $gr
-			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+			background-color: #DCDFF3
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
 		&-thumb
 			background-color: $lblue
 			//background-color: #b1bafd
@@ -610,6 +551,7 @@ input[type="number"]
 	display: grid
 	grid-template-columns: repeat(8, 1fr)
 	grid-template-rows: calc(100vh - 100px)
+	opacity: .1
 	&__title
 		position: absolute
 		font-family: $ebold
@@ -709,6 +651,8 @@ input[type="number"]
 				border: 1px solid #fff
 	&__btn
 		color: $lgr
+		display: flex
+		align-items: center
 		+easeinout
 		&-circle
 			position: relative
@@ -740,3 +684,178 @@ input[type="number"]
 		background-repeat: no-repeat
 		background-size: contain
 		background-position: 100% 0
+.section
+	display: grid
+	grid-template-columns: repeat(11, 1fr)
+	&__in
+		grid-column: 2/10
+		//min-height: 600px
+		padding: 60px 0
+		+r(1200)
+			padding: 40px 0
+	&__ttl
+		font-family: $ebold
+		font-size: 40px
+		line-height: 1.1
+		letter-spacing: 1px
+		margin-bottom: 40px
+		+r(1200)
+			font-size: 28px
+	&__filter
+		color: #000
+		display: grid
+		grid-column-gap: 30px
+		grid-template-columns: repeat(4, 1fr)
+		margin-bottom: 35px
+		&-group
+			display: flex
+			justify-content: space-between
+			align-items: center
+		&-label
+			margin-right: 9px
+			margin-bottom: 0
+.select2-container--open
+	.select2-selection__arrow
+		transform: scaleY(-1)
+	.select2-dropdown--below
+		border: none
+		box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.15)
+		overflow: hidden
+.select2-container--default
+	text-align: center
+	flex-basis: 160px
+	flex-grow: 1
+	.select2-selection--single
+		border: none
+		border-radius: 0
+		border-bottom: 1px solid #000
+		background: none
+		outline: none
+		.select2-selection__rendered
+			color: #000
+		.select2-selection__arrow
+			background-image: url('../img/icon-arrow--select.svg')
+			+easeinout
+			background-position: 100% 50%
+			background-size: 13px
+			background-repeat: no-repeat
+			b
+				display: none
+	.select2-results__option
+		+ease
+	.select2-results__option--highlighted[aria-selected]
+		background-color: $blue
+		color: #fff
+	.select2-results__option[aria-selected=true]
+		background-color: #DCDFF3
+		color: $dark
+	.select2-results>.select2-results__options
+		&::-webkit-scrollbar
+			width: 10px
+			&-track
+				background-color: $gr
+				box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+			&-thumb
+				background-color: $lblue
+				//background-color: #b1bafd
+				border-radius: 50px
+.owl-carousel
+	.owl-nav
+		button
+			&.owl-prev,
+			&.owl-next
+				width: 40px
+				height: 40px
+				position: absolute
+				top: 50%
+				border-radius: 50%
+				padding: 0
+				border: 1px solid $dark
+				background-color: $tr
+				display: flex
+				justify-content: center
+				align-items: center
+				transform: translateY(-50%)
+				+easeinout
+				&.disabled
+					opacity: 0
+					cursor: default
+					&:hover
+						opacity: 0
+						cursor: default
+			&.owl-prev
+				left: -60px
+				svg
+					stroke: $dark
+					transform: translateX(10px)
+					+easeinout
+				&:hover
+					svg
+						transform: translateX(-10px)
+				+r(1200)
+					left: 5px
+			&.owl-next
+				right: -60px
+				svg
+					stroke: $dark
+					transform: translateX(-10px)
+					+easeinout
+				&:hover
+					svg
+						transform: translateX(10px)
+				+r(1200)
+					right: 5px
+.card
+	background-color: #fff
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25)
+	max-width: 290px
+	padding: 22px
+	margin-bottom: 40px
+	+easeinout
+	&:hover
+		background-color: #DCDFF3
+		box-shadow: 0 20px 15px rgba(0, 0, 0, 0.15)
+	&__list
+		.owl-item img
+			width: auto
+
+	&__img
+		display: block
+		margin: 0 auto 25px
+		height: 207px
+		width: 141px
+		object-fit: contain
+	&__ttl
+		font-family: $emed
+		font-size: 20px
+		line-height: 1.1
+		margin-bottom: 15px
+	&__info
+		color: #555
+		max-width: 213px
+		margin-bottom: 10px
+		&-item
+			display: flex
+			align-items: baseline
+			span
+				&:nth-child(1)
+					flex-basis: 140px
+	&__labels
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 10px
+	&__logo
+		height: auto
+		max-width: 76px
+		object-fit: contain
+	&__icon
+		height: 35px
+		width: 35px
+		object-fit: contain
+	&__price
+		font-family: $ebold
+		font-size: 30px
+		margin-bottom: 20px
+	&__btn
+		width: 100%
