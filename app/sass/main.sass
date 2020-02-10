@@ -331,9 +331,12 @@ input[type="number"]
 		align-items: center
 		&-link
 			color: $ldark
+			border-bottom: 1px solid $tr
 			+easeinout
 			&:not(:last-child)
 				margin-right: 25px
+			&:hover
+				border-bottom-color: $dblue
 	&__info
 		display: flex
 		flex-wrap: wrap
@@ -1049,15 +1052,30 @@ input[type="number"]
 			width: 100%
 			margin-top: 15px
 .map
-	min-height: 500vh
+	position: absolute
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	.ymaps-2-1-75-ground-pane
+    	filter: grayscale(100%) invert(1)
+	&__wrp
+		position: relative
+		min-height: 500px
 	&__in
+		min-height: 500px
 		display: grid
 		grid-template-columns: repeat(11, 1fr)
+		align-content: center
 	&__info
 		color: #fff
 		background-color: $blue
 		grid-column: 2/5
 		padding: 30px 50px
+		position: relative
+		z-index: 1
+		top: 50%
+		transform: translateY(-50%)
 		&-tel
 			font-family: $ebold
 			font-size: 20px
@@ -1075,3 +1093,45 @@ input[type="number"]
 				margin-left: 5px
 			&:hover
 				color: #fff
+.footer
+	color: #fff
+	background-color: $dark
+	padding: 50px 100px 70px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	&__left
+		display: flex
+		align-items: center
+	&__logo
+		font-family: $ebold
+		font-size: 24px
+		text-transform: uppercase
+		text-align: center
+		background-color: $blue
+		padding: 12px 20px
+		width: 130px
+		margin-right: 18px
+	&__nav
+		display: flex
+		align-items: center
+		&-link
+			color: #fff
+			border-bottom: 1px solid #fff
+			&:not(:last-child)
+				margin-right: 10px
+			&:hover
+				border-bottom-color: $dblue
+	&__tel
+		font-size: 16px
+		color: #fff
+		display: flex
+		align-items: center
+		svg
+			fill: #fff
+			+ease
+		span
+			margin-left: 5px
+		&:hover
+			svg
+				fill: $dblue

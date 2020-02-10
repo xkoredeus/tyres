@@ -115,9 +115,9 @@ $(() => {
   ymaps.ready(init);
   function init(){
     myMap = new ymaps.Map("map", {
-        center: [59.83663456, 30.37202250],
-        globalPixelCenter: [54,35],
-        zoom: 10,
+        center: [55.68676265060023,37.56327550212061],
+        globalPixelCenter: [56,34],
+        zoom: 11,
         scrollZoom: false,
         controls: ["typeSelector"],
     });
@@ -125,19 +125,7 @@ $(() => {
     myMap.behaviors.disable('scrollZoom');
     var placemarks = [
         {
-            coords: [59.86663456, 30.47202250],
-            icon: 'img/baloon.svg',
-            icon_size: [50, 50],
-            icon_offset: [-25, -25], // -50% ширины, -100% высоты от точки привязки (левый верхний угол)
-        },
-        {
-            coords: [59.82384206, 30.52547200],
-            icon: 'img/baloon.svg',
-            icon_size: [50, 50],
-            icon_offset: [-25, -25], // -50% ширины, -100% высоты от точки привязки (левый верхний угол)
-        },
-        {
-            coords: [60.54950006, 30.21664900],
+            coords: [55.69058694046954,37.58305947581445],
             icon: 'img/baloon.svg',
             icon_size: [50, 50],
             icon_offset: [-25, -25], // -50% ширины, -100% высоты от точки привязки (левый верхний угол)
