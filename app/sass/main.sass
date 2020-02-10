@@ -100,16 +100,6 @@ input::-webkit-inner-spin-button
 input[type="number"]
 	-moz-appearance: textfield
 	appearance: textfield
-.form-group
-	position: relative
-	input
-		width: 100%
-	&__icon
-		fill: #686868
-		position: absolute
-		left: 22px
-		top: 50%
-		transform: translateY(-50%)
 .checkbox
 	cursor: pointer
 	position: relative
@@ -453,6 +443,7 @@ input[type="number"]
 		border-top-left-radius: 36px
 		border-bottom-left-radius: 36px
 		margin-bottom: 50px
+		&
 		&-arrow
 			position: absolute
 			right: 15px
@@ -700,6 +691,10 @@ input[type="number"]
 		margin-bottom: 35px
 		+r(1200)
 			font-size: 28px
+	&__subttl
+		font-family: $emed
+		font-size: 20px
+		margin-bottom: 15px
 	&__filter
 		color: #000
 		display: grid
@@ -878,9 +873,27 @@ input[type="number"]
 			margin-right: 24px
 .form
 	&-group
+		position: relative
 		display: flex
 		align-items: center
 		margin-bottom: 15px
+		input
+			width: 100%
+		&__icon
+			fill: #686868
+			position: absolute
+			left: 22px
+			top: 50%
+			transform: translateY(-50%)
+		&--black
+			input
+				color: #000
+				border-bottom-color: #000
+				&::placeholder
+					color: #000 !important
+				&:focus
+					color: $blue
+					border-bottom-color: $blue
 	&-label
 		font-family: $emed
 		font-size: 16px
@@ -890,15 +903,20 @@ input[type="number"]
 	&-input
 		flex-grow: 1
 	&-check
-		margin-top: 10px
+		margin-top: 25px
 		&__input
 			position: absolute
 			z-index: -1
 			opacity: 0
 			visibility: hidden
+			&:checked ~ .form-check__text
+				.form-check__text-gal
+					transform: scale(1)
+					opacity: 1
 		&__text
 			display: flex
 			align-items: center
+			cursor: pointer
 			&-circle
 				position: relative
 				min-width: 31px
@@ -910,20 +928,44 @@ input[type="number"]
 			&-gal
 				position: absolute
 				stroke: #fff
+				top: 2px
 				left: 6px
-    			top: -2px
+				opacity: 0
+				transform: scale(.5)
+				+easeinout
+		&--black
+			.form-check
+				&__text
+					&-circle
+						border-color: #000
+					&-gal
+						stroke: #000
+
 .service
 	grid-template-rows: minmax(100px, auto) minmax(470px, auto)
 	&__descr
 		color: $ldark
 	&__slider
 		grid-column: 1/12
+		.owl-nav
+			button
+				&.owl-prev,
+				&.owl-next
+					border: 1px solid #fff
+				&.owl-prev
+					left: 60px
+					svg
+						stroke: #fff
+				&.owl-next
+					right: 60px
+					svg
+						stroke: #fff
 		&-item
 			position: relative
 			min-height: 470px
 			+cv
 			display: grid
-			grid-template-columns: repeat(8, 1fr)
+			grid-template-columns: repeat(11, 1fr)
 			align-content: center
 			&::before
 				+ovl
@@ -935,9 +977,6 @@ input[type="number"]
 		grid-column: 3/span 3
 		max-width: 350px
 		&-ttl
-			font-family: $ebold
-			font-size: 40px
-			line-height: 1
 			margin-bottom: 15px
 		&-input
 			color: #fff
@@ -951,3 +990,88 @@ input[type="number"]
 		&-btn
 			width: 100%
 			margin-top: 15px
+.feed
+	&__price
+		position: relative
+		background-color: #000
+		grid-column: span 4
+		background-image: url('../img/feed__price-bg.jpg')
+		+cv
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		&::before
+			+ovl
+			background-color: $lgr
+			opacity: .8
+		&-in
+			position: relative
+			grid-column: 2/6
+			padding-top: 90px
+			padding-bottom: 90px
+		&-btn
+			min-width: 380px
+			span
+				display: flex
+				justify-content: center
+				align-items: center
+				padding-top: 80px !important
+				padding-bottom: 80px !important
+			svg
+				+easeinout
+				path:nth-child(1)
+					stroke: #fff
+					+easeinout
+				fill: #fff
+			&-text
+				font-family: $emed
+				font-size: 28px
+				text-transform: uppercase
+				max-width: 120px
+				margin-left: 20px
+				text-align: left
+			&:hover
+				svg
+					fill: $dark
+					path:nth-child(1)
+						stroke: $dark
+	&__ttl
+		margin-bottom: 15px
+	&__form
+		padding-top: 90px
+		padding-bottom: 90px
+		grid-column: span 7
+		display: grid
+		grid-template-columns: repeat(7, 1fr)
+		&-in
+			grid-column: 2/5
+			max-width: 390px
+		&-btn
+			width: 100%
+			margin-top: 15px
+.map
+	min-height: 500vh
+	&__in
+		display: grid
+		grid-template-columns: repeat(11, 1fr)
+	&__info
+		color: #fff
+		background-color: $blue
+		grid-column: 2/5
+		padding: 30px 50px
+		&-tel
+			font-family: $ebold
+			font-size: 20px
+			color: #fff
+			margin-bottom: 10px
+			display: block
+			&:hover
+				color: #fff
+		&-item
+			color: #fff
+			display: flex
+			align-items: center
+			margin-bottom: 12px
+			span
+				margin-left: 5px
+			&:hover
+				color: #fff
