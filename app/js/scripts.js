@@ -108,7 +108,18 @@ $(() => {
   });
 });
 
-//map
+$(() => {
+  $('.js-popup__open').on('click', function () {
+    $('.grid-layout').addClass('menu-open');
+  });
+  $('.js-popup__close').on('click', function () {
+    $('.grid-layout').removeClass('menu-open');
+  });
+  $('.js-grid__overlay').on('click', function () {
+    $('.grid-layout').removeClass('menu-open');
+  });
+});
+
 $(() => {
   var myMap;
 

@@ -40,7 +40,7 @@
 				</div>
 				<a class="header__tel" href="tel:78000000000">+7 (800) 000-00-00</a>
 			</div>
-			<button type="button" class="header__btn">
+			<button type="button" class="header__btn js-popup__open">
 				<div class="header__btn-in"><span>Заказать звонок</span></div>
 				<svg class="header__btn-arrow" width="84" height="8" viewBox="0 0 84 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path id="header__btn-arrow-dark" d="M0 4H82.5"/>
@@ -1892,25 +1892,42 @@
 				</a>
 			</footer>
 		</div>
-	</div>
-	<div id="popup_call" class="popup__container" style="display:none">
-		<div  class="popup__wrp popup_call__wrp">
-			<form action="[[~[[*id]]]]" method="post" class="popup">
-				<h3 class="popup__ttl">Оставьте заявку</h3>
-				<div class="input__wrp input__wrp_name">
-					<input type="text" class="form__input" name="popup_call__name" placeholder="Ваше имя" required="">
-				</div>
-				<div class="input__wrp input__wrp_tel">
-					<input type="tel" class="form__input" name="popup_call__tel" placeholder="Телефон" required="">
-				</div>
-				<div class="input__wrp input__wrp_mail">
-					<input type="email" class="form__input" name="popup_call__email" placeholder="E-mail">
-				</div>
-				<input type="submit" class="btn" name="popup_call__sumbit" value="Заказать">
-				<div class="popup__policy">
-					Нажимая кнопку "Отправить", вы соглашаетесь с <a href="#" class="form__policy-link">политикой конфиденциальности</a>
-				</div>
-			</form>
+		<div class="grid-layout__overlay js-grid__overlay"></div>
+		<div class="popup">
+			<button type="button" class="popup__cross js-popup__close">
+				<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="black"/>
+					<path d="M47.6465 47.6465L0.646484 0.646484" stroke="black"/>
+				</svg>
+			</button>
+			<div class="popup__in">
+				<form class="popup__form">
+					<div class="popup__ttl section__ttl">Закажите консультацию</div>
+					<div class="section__subttl">Напишите нам и мы с удовольствием Вам&nbsp;ответим!</div>
+					<div class="form-group form-group--black">
+						<label class="form-label">Ваше имя:</label>
+						<input class="form-input" type="text">
+					</div>
+					<div class="form-group form-group--black">
+						<label class="form-label">Ваше телефон:</label>
+						<input class="form-input" type="tel" placeholder="+7 (---) ---_--_--">
+					</div>
+					<button class="feed__form-btn btn btn--blue" type="submit"><span>Оставить заявку</span></button>
+					<div class="form-check form-check--black">
+						<label class="form-check__label">
+							<input type="checkbox" checked required class="form-check__input">
+							<div class="form-check__text">
+							<span class="form-check__text-circle">
+								<svg class="form-check__text-gal" width="28" height="23" fill="none" viewBox="0 0 28 23" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 15.5385L7.11765 22L27 1"/>
+								</svg>
+							</span>
+								<span>Нажимая на кнопку <span class="b">Оставить заявку</span>, Вы соглашаетесь с политикой конфиденциальности</span>
+							</div>
+						</label>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 	<script src="js/libs.min.js"></script>

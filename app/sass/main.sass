@@ -242,6 +242,19 @@ input[type="number"]
 		display: flex
 		justify-content: center
 		align-items: center
+.grid-layout
+	position: relative
+	display: grid
+	grid-template-columns: repeat(12, 1fr)
+	grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
+	overflow: hidden
+	&__overlay
+		+ovl
+		background-color: $dblue
+		opacity: 0
+		visibility: hidden
+		z-index: 2
+		+ease
 .popup
 	position: absolute
 	top: 0
@@ -260,7 +273,6 @@ input[type="number"]
 		overflow-y: scroll
 		padding: 20px 15px
 	&__in
-		position: relative
 		opacity: 0
 		transition: all 2.5s ease
 		+r(1200)
@@ -283,25 +295,15 @@ input[type="number"]
 			font-size: 15px
 			color: #686868
 .menu-open
-	overflow: hidden
-	height: 100%
-	width: 100%
-	padding-right: 18px
 	+r(1200)
 		padding-right: 0
 	.popup
 		right: 0
 		&__in
 			opacity: 1
-	.banner
-		&__overlay
-			opacity: .8
-			visibility: visible
-.grid-layout
-	display: grid
-	grid-template-columns: repeat(12, 1fr)
-	grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
-	overflow: hidden
+	.grid-layout__overlay
+		opacity: .9
+		visibility: visible
 .header
 	grid-column: span 12
 	display: grid
