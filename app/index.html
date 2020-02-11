@@ -84,7 +84,11 @@
 			</button>
 		</aside>
 		<div class="content">
-			<section class="banner">
+			<section class="banner" id="banner">
+				<div class="banner__bg-wrp">
+					<div class="banner__bg banner__bg--1"></div>
+					<div class="banner__bg banner__bg--2"></div>
+				</div>
 				<div class="banner__top">
 					<div class="banner__promo-wrp">
 						<div class="banner__promo">
@@ -1932,56 +1936,7 @@
 	</div>
 	<script src="js/libs.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-	<script>
-		$.fn.select2.amd.define('select2/i18n/ru',[],function () {
-			// Russian
-			return {
-				errorLoading: function () {
-					return 'Результат не может быть загружен.';
-				},
-				inputTooLong: function (args) {
-					var overChars = args.input.length - args.maximum;
-					var message = 'Пожалуйста, удалите ' + overChars + ' символ';
-					if (overChars >= 2 && overChars <= 4) {
-						message += 'а';
-					} else if (overChars >= 5) {
-						message += 'ов';
-					}
-					return message;
-				},
-				inputTooShort: function (args) {
-					var remainingChars = args.minimum - args.input.length;
-
-					var message = 'Пожалуйста, введите ' + remainingChars + ' или более символов';
-
-					return message;
-				},
-				loadingMore: function () {
-					return 'Загружаем ещё ресурсы…';
-				},
-				maximumSelected: function (args) {
-					var message = 'Вы можете выбрать ' + args.maximum + ' элемент';
-
-					if (args.maximum  >= 2 && args.maximum <= 4) {
-						message += 'а';
-					} else if (args.maximum >= 5) {
-						message += 'ов';
-					}
-
-					return message;
-				},
-				noResults: function () {
-				  return 'Ничего не найдено';
-				},
-				searching: function () {
-				  return 'Поиск…';
-				}
-			};
-		});
-	</script>
-
-  	<script src="https://api-maps.yandex.ru/2.1/?apikey=078a27eb-0b91-4b81-8ea4-d202061ff355&lang=ru_RU"
-  type="text/javascript">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=078a27eb-0b91-4b81-8ea4-d202061ff355&lang=ru_RU"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>
