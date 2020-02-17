@@ -13,7 +13,13 @@
 <body>
 	<div class="grid-layout">
 		<header class="header">
+			<button type="button" class="header__hmb"></button>
 			<div class="header__logo">Лого</div>
+			<button type="butotn" class="header__filter-btn">
+				<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M0.105572 0.645654C0.291774 0.251923 0.693956 0 1.13637 0H23.8636C24.306 0 24.7082 0.251923 24.8944 0.645654C25.0806 1.03938 25.017 1.50333 24.7313 1.83476L15.9091 12.0697V21.1824C15.9091 21.5688 15.7051 21.9276 15.3701 22.1308C15.0351 22.3339 14.6168 22.3524 14.2645 22.1796L9.71908 19.9499C9.3341 19.761 9.0909 19.375 9.0909 18.9527V12.0697L0.268667 1.83476C-0.0170114 1.50333 -0.0806306 1.03938 0.105572 0.645654ZM3.58558 2.22973L11.095 10.9416C11.2684 11.1428 11.3636 11.3979 11.3636 11.6615V18.2637L13.6363 19.3785V11.6615C13.6363 11.3979 13.7315 11.1428 13.905 10.9416L21.4144 2.22973H3.58558Z" fill="white"/>
+				</svg>
+			</button>
 			<div class="header__in">
 				<nav class="header__nav">
 					<a class="header__nav-link" href="#">Ассортимент</a>
@@ -84,7 +90,11 @@
 			</button>
 		</aside>
 		<div class="content">
-			<section class="banner">
+			<section class="banner" id="banner">
+				<div class="banner__bg-wrp">
+					<div class="banner__bg banner__bg--1"></div>
+					<div class="banner__bg banner__bg--2"></div>
+				</div>
 				<div class="banner__top">
 					<div class="banner__promo-wrp">
 						<div class="banner__promo">
@@ -1932,56 +1942,7 @@
 	</div>
 	<script src="js/libs.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
-	<script>
-		$.fn.select2.amd.define('select2/i18n/ru',[],function () {
-			// Russian
-			return {
-				errorLoading: function () {
-					return 'Результат не может быть загружен.';
-				},
-				inputTooLong: function (args) {
-					var overChars = args.input.length - args.maximum;
-					var message = 'Пожалуйста, удалите ' + overChars + ' символ';
-					if (overChars >= 2 && overChars <= 4) {
-						message += 'а';
-					} else if (overChars >= 5) {
-						message += 'ов';
-					}
-					return message;
-				},
-				inputTooShort: function (args) {
-					var remainingChars = args.minimum - args.input.length;
-
-					var message = 'Пожалуйста, введите ' + remainingChars + ' или более символов';
-
-					return message;
-				},
-				loadingMore: function () {
-					return 'Загружаем ещё ресурсы…';
-				},
-				maximumSelected: function (args) {
-					var message = 'Вы можете выбрать ' + args.maximum + ' элемент';
-
-					if (args.maximum  >= 2 && args.maximum <= 4) {
-						message += 'а';
-					} else if (args.maximum >= 5) {
-						message += 'ов';
-					}
-
-					return message;
-				},
-				noResults: function () {
-				  return 'Ничего не найдено';
-				},
-				searching: function () {
-				  return 'Поиск…';
-				}
-			};
-		});
-	</script>
-
-  	<script src="https://api-maps.yandex.ru/2.1/?apikey=078a27eb-0b91-4b81-8ea4-d202061ff355&lang=ru_RU"
-  type="text/javascript">
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=078a27eb-0b91-4b81-8ea4-d202061ff355&lang=ru_RU"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/ScrollMagic.min.js"></script>

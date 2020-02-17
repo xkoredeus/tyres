@@ -35,6 +35,11 @@ $gr: #E5E5E5
 @mixin r($width)
 	@media only screen and (max-width: $width + "px")
 		@content
+@mixin rmin($width)
+  @media only screen and (min-width: $width + "px")
+    @content
+*
+	box-sizing: border-box
 body
 	position: relative
 	scroll-behavior: smooth
@@ -95,7 +100,7 @@ textarea:active
 	border-bottom-color: $blue
 	outline: none
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button 
+input::-webkit-inner-spin-button
 	-webkit-appearance: none
 input[type="number"]
 	-moz-appearance: textfield
@@ -186,6 +191,10 @@ input[type="number"]
 		span
 			padding: 20px 30px
 			color: #fff
+			+r(1566)
+				padding: 20px
+			+r(1050)
+				padding: 15px 10px
 	&::before
 		content: ''
 		position: absolute
@@ -206,11 +215,15 @@ input[type="number"]
 		+easeinout
 	span
 		position: relative
-		min-width: 192px
+		//min-width: 192px
 		padding: 20px 30px
 		display: block
 		z-index: 2
 		+easeinout
+		+r(1566)
+			padding: 20px
+		+r(1050)
+			padding: 15px 10px
 	&--blue
 		span
 			color: #fff
@@ -248,12 +261,15 @@ input[type="number"]
 	grid-template-columns: repeat(12, 1fr)
 	grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
 	overflow: hidden
+	+r(1285)
+		grid-template-columns: repeat(10, 1fr)
+		grid-template-rows: minmax(50px, auto) calc(100vh - 50px)
 	&__overlay
 		+ovl
 		background-color: $dblue
 		opacity: 0
 		visibility: hidden
-		z-index: 2
+		z-index: 3
 		+ease
 .popup
 	position: absolute
@@ -308,7 +324,11 @@ input[type="number"]
 	grid-column: span 12
 	display: grid
 	grid-template-columns: repeat(12, 1fr)
-	padding-right: 15px
+	+rmin(1285)
+		padding-right: 15px
+	+r(1285)
+		grid-template-columns: 50px 1fr 50px
+		background-color: $blue
 	&__logo
 		color: #fff
 		font-family: $ebold
@@ -319,6 +339,8 @@ input[type="number"]
 		display: flex
 		justify-content: center
 		align-items: center
+		+r(1285)
+			grid-column: 2/3
 	&__in
 		font-size: 18px
 		background-color: #fff
@@ -328,6 +350,13 @@ input[type="number"]
 		justify-content: space-between
 		align-items: center
 		padding: 30px
+		+r(1566)
+			font-size: 14px
+			padding: 20px 25px
+		+r(1285)
+			position: absolute
+			opacity: 0
+			z-index: -1
 	&__nav
 		display: flex
 		align-items: center
@@ -337,6 +366,8 @@ input[type="number"]
 			+easeinout
 			&:not(:last-child)
 				margin-right: 25px
+				+r(1566)
+					margin-right: 15px
 			&:hover
 				border-bottom-color: $dblue
 	&__info
@@ -364,6 +395,8 @@ input[type="number"]
 		width: 100%
 		height: 100%
 		display: flex
+		+r(1285)
+			display: none
 		&:hover
 			.header__btn
 				&-in
@@ -372,6 +405,8 @@ input[type="number"]
 					span
 						color: $dark
 				&-arrow
+					+r(1566)
+						width: 60px
 					path
 						stroke: $dark
 		&-in
@@ -414,18 +449,47 @@ input[type="number"]
 			top: 50%
 			transform: translateY(-50%)
 			+easeinout
+			+r(1636)
+				width: 60px
 			path
 				&:nth-child(1)
 					stroke: $ldark
-				&:nth-child(2)
-					stroke: #fff
-					+ease
+			&:nth-child(2)
+			stroke: #fff
+			+ease
+	&__hmb
+		position: relative
+		display: none
+		&::before,
+		&::after
+			position: absolute
+			content: ''
+			left: 50%
+			transform: translateX(-50%)
+			background-color: #fff
+			width: 30px
+			height: 3px
+		&::before
+			top: 20px
+		&::after
+			bottom: 20px
+		+r(1285)
+			display: block
+			grid-column: 1/2
+	&__filter-btn
+		display: none
+		+r(1285)
+			display: block
+			grid-column: 3/4
+
 .aside
 	background-color: #fff
 	grid-column: span 1
 	display: flex
 	flex-direction: column
 	justify-content: center
+	+r(1285)
+		display: none
 	&__socials
 		display: flex
 		flex-direction: column
@@ -448,38 +512,70 @@ input[type="number"]
 		border-top-left-radius: 36px
 		border-bottom-left-radius: 36px
 		margin-bottom: 50px
-		&
+		+r(1638)
+			padding: 33px 48px 33px 23px
 		&-arrow
 			position: absolute
 			right: 15px
 			top: 50%
 			transform: translateY(-50%)
 			background: linear-gradient(90deg, #404B9E 16.91%, rgba(64, 75, 158, 0) 107.19%)
+			+easeinout
+			+r(1638)
+				right: 10px
+				width: 35px
+		&:hover
+			.aside__btn-arrow
+				transform: translateY(-50%) translateX(5px)
 .content
 	grid-column: 2/13
 	overflow: auto
-	&::-webkit-scrollbar
-		width: 15px
-		&-track
-			background-color: #DCDFF3
-			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
-		&-thumb
-			background-color: $lblue
-			//background-color: #b1bafd
-			border-radius: 50px
+	+r(1285)
+		grid-column: 1/13
+	+rmin(1285)
+		&::-webkit-scrollbar
+			width: 15px
+			&-track
+				background-color: #DCDFF3
+				box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+			&-thumb
+				background-color: $lblue
+				//background-color: #b1bafd
+				border-radius: 50px
 .banner
 	position: relative
 	color: #fff
 	grid-column: 1/13
 	display: grid
 	grid-template-columns: repeat(11, 1fr)
-	grid-template-rows: calc(100vh - 100px)
-	background-image: url('../img/banner__bg_1.jpg')
-	+cv
+	grid-template-rows: minmax(500px, calc(100vh - 100px))
+	overflow: hidden
+	+r(1285)
+		grid-template-rows: minmax(400px, calc(100vh - 50px))
+	&__bg
+		position: absolute
+		width: 100%
+		height: 100%
+		left: 0
+		top: 0
+		+cv
+		&-wrp
+			position: absolute
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+		+cv
+		&--1
+			background-image: url('../img/banner__bg_1.jpg')
+		&--2
+			background-image: url('../img/banner__bg_2.jpg')
+			transform: translateY(-100%)
 	&::before
 		+ovl
 		background-color: $dblue
-		opacity: .7
+		opacity: .8
+		z-index: 1
 	&::after
 		position: absolute
 		content: ''
@@ -496,10 +592,16 @@ input[type="number"]
 		justify-content: space-between
 		align-items: center
 		padding: 25px
-		//z-index: 1
+		z-index: 2
+		+r(1285)
+			grid-column: 1/13
 	&__promo
 		max-width: 650px
 		flex-basis: 60%
+		+r(1285)
+			flex-basis: 100%
+			text-align: center
+			max-width: unset
 		&-wrp
 			width: 100%
 			display: flex
@@ -507,16 +609,22 @@ input[type="number"]
 			justify-content: space-between
 	&__ttl
 		font-family: $ebold
-		font-size: 60px
+		font-size: 49px
 		line-height: 1
 		color: $lgr
 		margin-bottom: 10px
+		+r(1285)
+			font-size: 30px
 		span
 			color: #fff
+			+r(1285)
+				display: block
 	&__subttl
 		font-family: $elig
-		font-size: 40px
+		font-size: 36px
 		text-transform: uppercase
+		+r(1285)
+			font-size: 25px
 	&__call
 		line-height: 1.1
 		display: flex
@@ -524,21 +632,32 @@ input[type="number"]
 		flex-direction: column
 		align-items: flex-end
 		align-self: flex-end
+		+r(1285)
+			flex-basis: 100%
+			align-self: center
+			align-items: center
+			margin-top: 30px
 		&-ttl
 			font-family: $elig
-			font-size: 40px
+			font-size: 39px
+			+r(1285)
+				font-size: 28px
 		&-tel
 			font-family: $ebold
-			font-size: 36px
+			font-size: 32px
 			color: #fff
 			border-bottom: 2px solid $tr
 			+ease
+			+r(1285)
+				font-size: 24px
 			&:hover
 				color: #fff
 				border-bottom: 2px solid #fff
 	&__btn
 		min-width: 280px
 		margin: 150px auto -100px
+		+r(1285)
+			margin: 25px auto 0
 .filter
 	position: absolute
 	bottom: 0
@@ -548,6 +667,15 @@ input[type="number"]
 	grid-template-columns: repeat(8, 1fr)
 	grid-template-rows: calc(100vh - 100px)
 	opacity: .1
+	+r(1285)
+		position: fixed
+		top: 50px
+		display: block
+		grid-column: 1/13
+		background-color: #E5E5E5
+		opacity: 1
+		z-index: 3
+		overflow: auto
 	&__title
 		position: absolute
 		font-family: $ebold
@@ -564,23 +692,48 @@ input[type="number"]
 		border: 1px solid #ffffff24
 		padding: 0 30px 45px 30px
 		overflow: hidden
+		+rmin(1285)
+			transform: translateY(30px)
+		+r(1285)
+			color: $dark
+			border: 1px solid #afafb1
+			padding: 20px 15px
+		&:hover
+			+rmin(1285)
+				.filter
+					&__item-in
+						transform: translateY(0)
+					&__img
+						transform: translateY(10px) scale(.9)
 		&-in
 			position: relative
 			width: 100%
 			margin-top: auto
+			+easeinout
+			+rmin(1285)
+				transform: translateY(10px)
 		&-top
 			display: flex
 			justify-content: space-between
-			min-height: 60px
+			min-height: 72px
 			margin-bottom: 30px
+			+r(1285)
+				min-height: auto
+				margin-bottom: 10px
 		&-ttl
 			font-family: $ebold
 			font-size: 30px
+			line-height: 1.2
 			text-transform: uppercase
+			+r(1285)
+				font-size: 20px
+				br
+					display: none
 	&__switch
 		&-label
 			position: relative
 			margin-top: -5px
+			display: none
 			input
 				position: absolute
 				z-index: -1
@@ -618,10 +771,15 @@ input[type="number"]
 				opacity: 0
 	&__rad
 		&-list
+			position: relative
 			display: flex
 			flex-wrap: wrap
 			max-width: 160px
 			margin-bottom: 30px
+			z-index: 1
+			+r(1285)
+				max-width: unset
+				margin-bottom: 10px
 		&-label
 			position: relative
 			cursor: pointer
@@ -636,20 +794,31 @@ input[type="number"]
 					color: $dark
 					background-color: $lgr
 					border-color: $lgr
+					+r(1285)
+						background-color: #fff
+						box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25)
 		&-item
 			padding: 10px 18px
 			font-size: 18px
 			color: $lgr
 			border: 1px solid $lgr
-			+ease
+			+easeinout
+			+r(1285)
+				color: $dark
+				border-color: $dark
+				background-color: $gr
 			&:hover
 				color: #fff
 				border: 1px solid #fff
 	&__btn
+		position: relative
 		color: $lgr
 		display: flex
 		align-items: center
 		+easeinout
+		z-index: 1
+		+r(1285)
+			color: $dark
 		&-circle
 			position: relative
 			width: 40px
@@ -658,19 +827,27 @@ input[type="number"]
 			border-radius: 50%
 			display: inline-block
 			+easeinout
+			+r(1285)
+				display: none
 			svg
 				stroke: $lgr
 				+easeinout
 				transform: translateY(-15px)
+				+r(1285)
+					stroke: $dark
 		&-text
 			margin-left: 10px
+			+r(1285)
+				margin-left: 0
+				text-decoration: underline
 		&:hover
-			color: #fff
-			.filter__btn-circle
-				border-color: #fff
-				svg
-					transform: translateY(10px)
-					stroke: #fff
+			+rmin(1285)
+				color: #fff
+				.filter__btn-circle
+					border-color: #fff
+					svg
+						transform: translateY(10px)
+						stroke: #fff
 	&__img
 		position: absolute
 		right: -30px
@@ -680,14 +857,23 @@ input[type="number"]
 		background-repeat: no-repeat
 		background-size: contain
 		background-position: 100% 0
+		+easeinout
+		transform-origin: bottom right
+		+r(1285)
+			opacity: .8
 .section
 	display: grid
 	grid-template-columns: repeat(11, 1fr)
 	&__in
 		grid-column: 2/10
 		padding: 60px 0
-		+r(1200)
-			padding: 40px 0
+		+r(1285)
+			grid-column: 1/13
+			padding: 40px 70px
+		+r(600)
+			padding: 30px 40px
+		+r(425)
+			padding: 30px 20px
 	&__ttl
 		font-family: $ebold
 		font-size: 40px
@@ -696,6 +882,8 @@ input[type="number"]
 		margin-bottom: 35px
 		+r(1200)
 			font-size: 28px
+			text-align: center
+			margin-bottom: 20px
 	&__subttl
 		font-family: $emed
 		font-size: 20px
@@ -706,13 +894,31 @@ input[type="number"]
 		grid-column-gap: 30px
 		grid-template-columns: repeat(4, 1fr)
 		margin-bottom: 35px
+		+r(1566)
+			grid-column-gap: 10px
+		+r(1133)
+			grid-template-columns: repeat(2, 1fr)
+			grid-gap: 6px
+		+r(600)
+			grid-template-columns: 1fr
 		&-group
 			display: flex
 			justify-content: space-between
 			align-items: center
+			+r(1566)
+				flex-wrap: wrap
+				text-align: center
 		&-label
+			white-space: nowrap
 			margin-right: 9px
 			margin-bottom: 0
+			+r(1566)
+				font-family: $emed
+				margin-left: auto
+				margin-right: auto
+				margin-bottom: 5px
+			+r(1285)
+				margin-bottom: 0
 .select2-container--open
 	.select2-selection__arrow
 		transform: scaleY(-1)
@@ -792,7 +998,7 @@ input[type="number"]
 					svg
 						transform: translateX(-10px)
 				+r(1200)
-					left: 5px
+					left: -30px
 			&.owl-next
 				right: -60px
 				svg
@@ -803,14 +1009,17 @@ input[type="number"]
 					svg
 						transform: translateX(10px)
 				+r(1200)
-					right: 5px
+					right: -30px
 .card
 	background-color: #fff
 	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25)
 	max-width: 290px
 	padding: 22px
-	margin-bottom: 40px
+	margin: 0 auto 40px
 	+easeinout
+	+r(1566)
+		padding: 15px
+		margin-bottom: 30px
 	&:hover
 		background-color: #DCDFF3
 		box-shadow: 0 20px 15px rgba(0, 0, 0, 0.15)
@@ -824,11 +1033,15 @@ input[type="number"]
 		height: 207px
 		width: 141px
 		object-fit: contain
+		+r(1050)
+			height: 130px
 	&__ttl
 		font-family: $emed
 		font-size: 20px
 		line-height: 1.1
 		margin-bottom: 15px
+		+r(1050)
+			font-size: 16px
 	&__info
 		color: #555
 		max-width: 213px
@@ -856,16 +1069,25 @@ input[type="number"]
 		font-family: $ebold
 		font-size: 30px
 		margin-bottom: 20px
+		+r(1050)
+			font-size: 20px
 	&__btn
 		width: 100%
 .about
 	background-color: #f5f4f4
 	&__descr
 		color: $ldark
+		+r(1285)
+			text-align: center
 	&__list
 		display: grid
 		grid-template-columns: repeat(4, 1fr)
 		grid-column-gap: 6px
+		+r(1133)
+			grid-template-columns: repeat(2, 1fr)
+			grid-row-gap: 6px
+		+r(600)
+			grid-template-columns: 1fr
 	&__item
 		font-size: 18px
 		background-color: $lgr
@@ -959,10 +1181,18 @@ input[type="number"]
 					border: 1px solid #fff
 				&.owl-prev
 					left: 60px
+					+r(1285)
+						left: 30px
+					+r(600)
+						left: 20px
 					svg
 						stroke: #fff
 				&.owl-next
 					right: 60px
+					+r(1285)
+						right: 30px
+					+r(600)
+						right: 20px
 					svg
 						stroke: #fff
 		&-item
@@ -981,8 +1211,14 @@ input[type="number"]
 		color: #fff
 		grid-column: 3/span 3
 		max-width: 350px
+		+r(1285)
+			grid-column: 1/12
+			margin-left: auto
+			margin-right: auto
 		&-ttl
 			margin-bottom: 15px
+			+r(1285)
+				text-align: center
 		&-input
 			color: #fff
 			font-size: 16px
@@ -1004,6 +1240,8 @@ input[type="number"]
 		+cv
 		display: grid
 		grid-template-columns: repeat(4, 1fr)
+		+r(1285)
+			grid-column: 1/13
 		&::before
 			+ovl
 			background-color: $lgr
@@ -1013,6 +1251,10 @@ input[type="number"]
 			grid-column: 2/6
 			padding-top: 90px
 			padding-bottom: 90px
+			+r(1285)
+				grid-column: 1/6
+				padding: 30px
+				text-align: center
 		&-btn
 			min-width: 380px
 			span
@@ -1021,6 +1263,8 @@ input[type="number"]
 				align-items: center
 				padding-top: 80px !important
 				padding-bottom: 80px !important
+				+r(1285)
+					padding: 20px 0 !important
 			svg
 				+easeinout
 				path:nth-child(1)
@@ -1041,15 +1285,27 @@ input[type="number"]
 						stroke: $dark
 	&__ttl
 		margin-bottom: 15px
+		+r(1285)
+			text-align: center
+	+r(1285)
+		.section__subttl
+			text-align: center
 	&__form
 		padding-top: 90px
 		padding-bottom: 90px
 		grid-column: span 7
 		display: grid
 		grid-template-columns: repeat(7, 1fr)
+		+r(1285)
+			grid-column: 1/13
+			padding: 30px
 		&-in
 			grid-column: 2/5
 			max-width: 390px
+			margin-left: auto
+			margin-right: auto
+			+r(1285)
+				grid-column: 1/8
 		&-btn
 			width: 100%
 			margin-top: 15px
@@ -1059,16 +1315,25 @@ input[type="number"]
 	height: 100%
 	left: 0
 	top: 0
+	+r(1285)
+		display: none
 	.ymaps-2-1-75-ground-pane
     	filter: grayscale(100%) invert(1)
 	&__wrp
 		position: relative
 		min-height: 500px
+		+r(1285)
+			min-height: 300px
+			padding: 30px
+			background-color: #1f1f21
 	&__in
 		min-height: 500px
 		display: grid
 		grid-template-columns: repeat(11, 1fr)
 		align-content: center
+		+r(1285)
+			min-height: 300px
+			grid-template-columns: 1fr
 	&__info
 		color: #fff
 		background-color: $blue
@@ -1078,6 +1343,12 @@ input[type="number"]
 		z-index: 1
 		top: 50%
 		transform: translateY(-50%)
+		+r(1285)
+			grid-column: 1
+			max-width: 370px
+			margin-left: auto
+			margin-right: auto
+			padding: 20px 25px
 		&-tel
 			font-family: $ebold
 			font-size: 20px
@@ -1098,13 +1369,19 @@ input[type="number"]
 .footer
 	color: #fff
 	background-color: $dark
-	padding: 50px 100px 70px
+	padding: 50px 100px
 	display: flex
 	justify-content: space-between
 	align-items: center
+	+r(1527)
+		padding: 50px
+	+r(1285)
+		flex-direction: column
 	&__left
 		display: flex
 		align-items: center
+		+r(1527)
+			flex-direction: column
 	&__logo
 		font-family: $ebold
 		font-size: 24px
@@ -1114,12 +1391,21 @@ input[type="number"]
 		padding: 12px 20px
 		width: 130px
 		margin-right: 18px
+		+r(1527)
+			margin-right: 0
+			margin-bottom: 10px
 	&__nav
 		display: flex
 		align-items: center
+		+r(1285)
+			justify-content: center
+			flex-wrap: wrap
+			margin: 20px auto
 		&-link
 			color: #fff
 			border-bottom: 1px solid #fff
+			+r(1285)
+				margin-bottom: 5px
 			&:not(:last-child)
 				margin-right: 10px
 			&:hover
