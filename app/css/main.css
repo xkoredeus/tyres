@@ -789,6 +789,12 @@ input[type="number"] {
   }
 }
 
+@media only screen and (max-width: 1636px) {
+  .header__btn-arrow {
+    width: 60px;
+  }
+}
+
 .header__btn-arrow path:nth-child(1) {
   stroke: #555555;
 }
@@ -1015,6 +1021,17 @@ input[type="number"] {
           transform: translateY(-100%);
 }
 
+.banner__bg--1 {
+  background-image: url("../img/banner__bg_1.jpg");
+}
+
+.banner__bg--2 {
+  background-image: url("../img/banner__bg_2.jpg");
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
 .banner::before {
   content: '';
   position: absolute;
@@ -1156,22 +1173,6 @@ input[type="number"] {
           align-self: flex-end;
 }
 
-@media only screen and (max-width: 1285px) {
-  .banner__call {
-    -webkit-flex-basis: 100%;
-        -ms-flex-preferred-size: 100%;
-            flex-basis: 100%;
-    -webkit-align-self: center;
-        -ms-flex-item-align: center;
-            align-self: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    margin-top: 30px;
-  }
-}
-
 .banner__call-ttl {
   font-family: "Effra-Light";
   font-size: 39px;
@@ -1265,6 +1266,21 @@ input[type="number"] {
   border: 1px solid #ffffff24;
   padding: 0 30px 45px 30px;
   overflow: hidden;
+  -webkit-transform: translateY(30px);
+      -ms-transform: translateY(30px);
+          transform: translateY(30px);
+}
+
+.filter__item:hover .filter__item-in {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.filter__item:hover .filter__img {
+  -webkit-transform: translateY(10px) scale(0.9);
+      -ms-transform: translateY(10px) scale(0.9);
+          transform: translateY(10px) scale(0.9);
 }
 
 @media only screen and (min-width: 1285px) {
@@ -1456,14 +1472,6 @@ input[type="number"] {
   color: #282A2F;
   background-color: #DFDFDF;
   border-color: #DFDFDF;
-}
-
-@media only screen and (max-width: 1285px) {
-  .filter__rad-label input:checked + .filter__rad-item {
-    background-color: #fff;
-    -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  }
 }
 
 .filter__rad-item {
