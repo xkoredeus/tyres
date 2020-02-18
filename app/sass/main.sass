@@ -35,6 +35,11 @@ $gr: #E5E5E5
 @mixin r($width)
 	@media only screen and (max-width: $width + "px")
 		@content
+@mixin rmin($width)
+  @media only screen and (min-width: $width + "px")
+    @content
+*
+	box-sizing: border-box
 body
 	position: relative
 	scroll-behavior: smooth
@@ -210,6 +215,7 @@ input[type="number"]
 		+easeinout
 	span
 		position: relative
+		//min-width: 192px
 		padding: 20px 30px
 		display: block
 		z-index: 2
@@ -318,6 +324,11 @@ input[type="number"]
 	grid-column: span 12
 	display: grid
 	grid-template-columns: repeat(12, 1fr)
+	+rmin(1285)
+		padding-right: 15px
+	+r(1285)
+		grid-template-columns: 50px 1fr 50px
+		background-color: $blue
 	&__logo
 		color: #fff
 		font-family: $ebold
@@ -328,6 +339,8 @@ input[type="number"]
 		display: flex
 		justify-content: center
 		align-items: center
+		+r(1285)
+			grid-column: 2/3
 	&__in
 		font-size: 18px
 		background-color: #fff
@@ -353,6 +366,8 @@ input[type="number"]
 			+easeinout
 			&:not(:last-child)
 				margin-right: 25px
+				+r(1566)
+					margin-right: 15px
 			&:hover
 				border-bottom-color: $dblue
 	&__info
@@ -505,9 +520,28 @@ input[type="number"]
 			top: 50%
 			transform: translateY(-50%)
 			background: linear-gradient(90deg, #404B9E 16.91%, rgba(64, 75, 158, 0) 107.19%)
+			+easeinout
+			+r(1638)
+				right: 10px
+				width: 35px
+		&:hover
+			.aside__btn-arrow
+				transform: translateY(-50%) translateX(5px)
 .content
 	grid-column: 2/13
 	overflow: auto
+	+r(1285)
+		grid-column: 1/13
+	+rmin(1285)
+		&::-webkit-scrollbar
+			width: 15px
+			&-track
+				background-color: #DCDFF3
+				box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+			&-thumb
+				background-color: $lblue
+				//background-color: #b1bafd
+				border-radius: 50px
 .banner
 	position: relative
 	color: #fff
@@ -540,6 +574,8 @@ input[type="number"]
 	&::before
 		+ovl
 		background-color: $dblue
+		opacity: .8
+		z-index: 1
 	&::after
 		position: absolute
 		content: ''
@@ -549,6 +585,8 @@ input[type="number"]
 		width: 139px
 		height: 100%
 		background: linear-gradient(90deg, #404B9E 16.91%, rgba(64, 75, 158, 0) 107.19%)
+		+r(1285)
+			display: none
 	&__top
 		position: relative
 		grid-column: 2/10
@@ -562,6 +600,10 @@ input[type="number"]
 	&__promo
 		max-width: 650px
 		flex-basis: 60%
+		+r(1285)
+			flex-basis: 100%
+			text-align: center
+			max-width: unset
 		&-wrp
 			width: 100%
 			display: flex
@@ -569,14 +611,22 @@ input[type="number"]
 			justify-content: space-between
 	&__ttl
 		font-family: $ebold
+		font-size: 49px
 		line-height: 1
 		color: $lgr
 		margin-bottom: 10px
+		+r(1285)
+			font-size: 30px
 		span
 			color: #fff
+			+r(1285)
+				display: block
 	&__subttl
 		font-family: $elig
+		font-size: 36px
 		text-transform: uppercase
+		+r(1285)
+			font-size: 25px
 	&__call
 		line-height: 1.1
 		display: flex
@@ -596,15 +646,20 @@ input[type="number"]
 				font-size: 28px
 		&-tel
 			font-family: $ebold
+			font-size: 32px
 			color: #fff
 			border-bottom: 2px solid $tr
 			+ease
+			+r(1285)
+				font-size: 24px
 			&:hover
 				color: #fff
 				border-bottom: 2px solid #fff
 	&__btn
 		min-width: 280px
 		margin: 150px auto -100px
+		+r(1285)
+			margin: 25px auto 0
 .filter
 	position: absolute
 	bottom: 0
@@ -614,6 +669,16 @@ input[type="number"]
 	grid-template-columns: repeat(8, 1fr)
 	grid-template-rows: calc(100vh - 100px)
 	opacity: .1
+	+r(1285)
+		position: fixed
+		top: 50px
+		display: block
+		grid-column: 1/13
+		background-color: #E5E5E5
+		opacity: 0
+		z-index: -3
+		visibility: hidden
+		overflow: auto
 	&__title
 		position: absolute
 		font-family: $ebold
@@ -661,6 +726,7 @@ input[type="number"]
 		&-ttl
 			font-family: $ebold
 			font-size: 30px
+			line-height: 1.2
 			text-transform: uppercase
 			+r(1285)
 				font-size: 20px
@@ -801,6 +867,8 @@ input[type="number"]
 .section
 	display: grid
 	grid-template-columns: repeat(11, 1fr)
+	+r(600)
+		overflow: hidden
 	&__in
 		grid-column: 2/10
 		padding: 60px 0
@@ -1107,6 +1175,8 @@ input[type="number"]
 
 .service
 	grid-template-rows: minmax(100px, auto) minmax(470px, auto)
+	+r(600)
+		overflow: hidden
 	&__descr
 		color: $ldark
 	&__slider
@@ -1121,7 +1191,7 @@ input[type="number"]
 					+r(1285)
 						left: 30px
 					+r(600)
-						left: 20px
+						left: -10px
 					svg
 						stroke: #fff
 				&.owl-next
@@ -1129,7 +1199,7 @@ input[type="number"]
 					+r(1285)
 						right: 30px
 					+r(600)
-						right: 20px
+						right: -10px
 					svg
 						stroke: #fff
 		&-item
