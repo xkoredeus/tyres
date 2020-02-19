@@ -311,12 +311,44 @@ input[type="number"]
 			font-size: 15px
 			color: #686868
 .menu-open
+	.header
+		&__in
+			opacity: 1
+			visibility: visible
+		&__hmb
+			background-color: $gr
+			&::before
+				transform: translateX(-50%) rotate(45deg)
+				background-color: $dark
+				top: 24px
+			&::after
+				transform: translateX(-50%) rotate(-45deg)
+				background-color: $dark
+				bottom: 23px
+.filter-open
+	.filter
+		visibility: visible
+		opacity: 1
+	.header
+		&__filter-btn
+			background-color: $gr
+			path
+				fill: $dark !important
+.feed-open
 	+r(1200)
 		padding-right: 0
 	.popup
 		right: 0
 		&__in
 			opacity: 1
+	.grid-layout__overlay
+		opacity: .9
+		visibility: visible
+.order-open
+	.order
+		opacity: 1
+		visibility: visible
+		transform: translate(-50%,-50%)
 	.grid-layout__overlay
 		opacity: .9
 		visibility: visible
@@ -354,12 +386,30 @@ input[type="number"]
 			font-size: 14px
 			padding: 20px 25px
 		+r(1285)
-			position: absolute
+			position: fixed
+			top: 50px
+			width: 100%
+			height: calc(100% - 50px)
+			background-color: $gr
+			flex-direction: column
+			justify-content: center
+			text-align: center
+			align-items: center
+			text-align: center
 			opacity: 0
-			z-index: -1
+			visibility: hidden
+			z-index: 3
+			+easeinout
+		&-btn
+			margin-top: 20px
+			+rmin(1285)
+				display: none
 	&__nav
 		display: flex
 		align-items: center
+		+r(1285)
+			flex-direction: column
+			margin-bottom: 25px
 		&-link
 			color: $ldark
 			border-bottom: 1px solid $tr
@@ -368,21 +418,35 @@ input[type="number"]
 				margin-right: 25px
 				+r(1566)
 					margin-right: 15px
+				+r(1285)
+					margin-right: 0
+					margin-bottom: 8px
 			&:hover
 				border-bottom-color: $dblue
+			+r(1285)
+				font-size: 16px
 	&__info
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
+		+r(1285)
+			flex-direction: column
+			align-items: center
+			margin-bottom: 25px
 		&-item
 			color: $ldark
 			display: flex
 			align-items: center
 			+easeinout
+			svg
+				fill: $dark !important
 			span
 				margin-left: 10px
 			&:not(:last-child)
 				margin-right: 25px
+				+r(1285)
+					margin-right: 0
+					margin-bottom: 10px
 	&__tel
 		color: $dark
 		font-size: 20px
@@ -454,12 +518,13 @@ input[type="number"]
 			path
 				&:nth-child(1)
 					stroke: $ldark
-			&:nth-child(2)
-			stroke: #fff
-			+ease
+				&:nth-child(2)
+					stroke: #fff
+					+ease
 	&__hmb
 		position: relative
 		display: none
+		+easeinout
 		&::before,
 		&::after
 			position: absolute
@@ -469,6 +534,7 @@ input[type="number"]
 			background-color: #fff
 			width: 30px
 			height: 3px
+			+easeinout
 		&::before
 			top: 20px
 		&::after
@@ -478,6 +544,7 @@ input[type="number"]
 			grid-column: 1/2
 	&__filter-btn
 		display: none
+		+easeinout
 		+r(1285)
 			display: block
 			grid-column: 3/4
@@ -676,9 +743,10 @@ input[type="number"]
 		grid-column: 1/13
 		background-color: #E5E5E5
 		opacity: 0
-		z-index: -3
 		visibility: hidden
 		overflow: auto
+		z-index: 3
+		+easeinout
 	&__title
 		position: absolute
 		font-family: $ebold
@@ -701,6 +769,8 @@ input[type="number"]
 			color: $dark
 			border: 1px solid #afafb1
 			padding: 20px 15px
+			&:nth-child(2)
+				border-top-color: $tr
 		&:hover
 			+rmin(1285)
 				.filter
@@ -801,15 +871,17 @@ input[type="number"]
 						background-color: #fff
 						box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25)
 		&-item
-			padding: 10px 18px
 			font-size: 18px
 			color: $lgr
 			border: 1px solid $lgr
+			padding: 10px 18px
 			+easeinout
 			+r(1285)
+				font-size: 14px
 				color: $dark
 				border-color: $dark
 				background-color: $gr
+				padding: 8px
 			&:hover
 				color: #fff
 				border: 1px solid #fff
@@ -1430,3 +1502,110 @@ input[type="number"]
 		&:hover
 			svg
 				fill: $dblue
+.order
+	position: absolute
+	z-index: 3
+	left: 50%
+	top: 50%
+	transform: translate(-50%,-40%)
+	opacity: 0
+	visibility: hidden
+	+easeinout
+	//+r(800)
+	//	min-height: 600px
+	//	display: flex
+	//	align-items: flex-end
+	//	overflow-y: scroll
+	&__in
+		position: relative
+		background-color: #fff
+		box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08)
+		padding: 30px
+		display: flex
+		justify-content: space-between
+		width: 590px
+		+r(800)
+			text-align: center
+			width: 320px
+			flex-direction: column
+			padding: 20px 15px
+	&__cross
+		position: absolute
+		top: -60px
+		right: 0
+		+easeinout
+		&:hover
+			transform: rotate(90deg)
+	&__slider
+		margin-right: 15px
+		overflow: hidden
+		+r(800)
+			margin-right: 0
+		.owl-nav
+			button
+				&.owl-prev
+					left: 0
+					+r(800)
+						left: 10px
+				&.owl-next
+					right: 0
+					+r(800)
+						right: 10px
+		&-top
+			margin-bottom: 15px
+			&-item
+				width: 272px
+				height: 230px
+				+ct
+				+r(800)
+					height: 120px
+		&-bot
+			width: 272px
+			+r(800)
+				display: none !important
+			&-item
+				height: 90px
+				+ct
+				border: 1px solid $gr
+			.owl-item.synced
+				opacity: .7
+	&__ttl
+		font-family: $emed
+		font-size: 20px
+		line-height: 1.1
+		margin-bottom: 15px
+		+r(1050)
+			font-size: 16px
+	&__info
+		color: #555
+		min-width: 243px
+		margin-bottom: 10px
+		&-item
+			display: flex
+			align-items: baseline
+			+r(800)
+				justify-content: center
+			span
+				&:nth-child(1)
+					flex-basis: 140px
+	&__labels
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 10px
+	&__logo
+		height: auto
+		max-width: 76px
+		object-fit: contain
+	&__icon
+		height: 35px
+		width: 35px
+		object-fit: contain
+	&__price
+		font-family: $ebold
+		font-size: 30px
+		margin-bottom: 20px
+		+r(1050)
+			font-size: 20px
+	&__btn
+		width: 100%

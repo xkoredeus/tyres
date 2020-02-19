@@ -15,18 +15,18 @@
 		<header class="header">
 			<button type="button" class="header__hmb"></button>
 			<div class="header__logo">Лого</div>
-			<button type="butotn" class="header__filter-btn">
+			<button type="button" class="header__filter-btn">
 				<svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path fill-rule="evenodd" clip-rule="evenodd" d="M0.105572 0.645654C0.291774 0.251923 0.693956 0 1.13637 0H23.8636C24.306 0 24.7082 0.251923 24.8944 0.645654C25.0806 1.03938 25.017 1.50333 24.7313 1.83476L15.9091 12.0697V21.1824C15.9091 21.5688 15.7051 21.9276 15.3701 22.1308C15.0351 22.3339 14.6168 22.3524 14.2645 22.1796L9.71908 19.9499C9.3341 19.761 9.0909 19.375 9.0909 18.9527V12.0697L0.268667 1.83476C-0.0170114 1.50333 -0.0806306 1.03938 0.105572 0.645654ZM3.58558 2.22973L11.095 10.9416C11.2684 11.1428 11.3636 11.3979 11.3636 11.6615V18.2637L13.6363 19.3785V11.6615C13.6363 11.3979 13.7315 11.1428 13.905 10.9416L21.4144 2.22973H3.58558Z" fill="white"/>
 				</svg>
 			</button>
 			<div class="header__in">
 				<nav class="header__nav">
-					<a class="header__nav-link" href="#">Ассортимент</a>
-					<a class="header__nav-link" href="#">О нас</a>
-					<a class="header__nav-link" href="#">Сервис</a>
-					<a class="header__nav-link" href="#">Цены</a>
-					<a class="header__nav-link" href="#">Контакты</a>
+					<a class="header__nav-link" href="#range">Ассортимент</a>
+					<a class="header__nav-link" href="#about">О нас</a>
+					<a class="header__nav-link" href="#service">Сервис</a>
+					<a class="header__nav-link" href="#price">Цены</a>
+					<a class="header__nav-link" href="#contacts">Контакты</a>
 				</nav>
 				<div class="header__info">
 					<div class="header__info-item">
@@ -45,6 +45,7 @@
 					</a>
 				</div>
 				<a class="header__tel" href="tel:78000000000">+7 (800) 000-00-00</a>
+				<button class="header__in-btn btn btn--blue js-popup__open"><span>Заказать звонок</span></button>
 			</div>
 			<button type="button" class="header__btn js-popup__open">
 				<div class="header__btn-in"><span>Заказать звонок</span></div>
@@ -346,7 +347,7 @@
 				</div>
 			</section>
 			<!--section-->
-			<section class="section">
+			<section class="section" id="range">
 				<div class="section__in">
 					<div class="section__ttl">Шины б/у 15 дюймов</div>
 					<!--filter-->
@@ -434,7 +435,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -456,7 +457,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -478,7 +479,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -500,7 +501,7 @@
 								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -522,7 +523,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -544,7 +545,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 					</div>
@@ -640,7 +641,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -662,7 +663,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -684,7 +685,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -706,7 +707,7 @@
 								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -728,7 +729,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -750,7 +751,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 					</div>
@@ -846,7 +847,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -868,7 +869,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -890,7 +891,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -912,7 +913,7 @@
 								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -934,7 +935,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -956,7 +957,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 					</div>
@@ -1052,7 +1053,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1074,7 +1075,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1096,7 +1097,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1118,7 +1119,7 @@
 								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1140,7 +1141,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1162,7 +1163,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 					</div>
@@ -1258,7 +1259,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1280,7 +1281,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1302,7 +1303,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1324,7 +1325,7 @@
 								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1346,7 +1347,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1368,7 +1369,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 					</div>
@@ -1464,7 +1465,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1486,7 +1487,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1508,7 +1509,7 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1530,7 +1531,7 @@
 								<img class="card__icon" src="img/card__icon_3.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1552,7 +1553,7 @@
 								<img class="card__icon" src="img/card__icon_1.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 						<!--item-->
@@ -1574,14 +1575,14 @@
 								<img class="card__icon" src="img/card__icon_2.png" alt="Card icon">
 							</div>
 							<div class="card__price">9000 ₽</div>
-							<button class="card__btn btn btn--blue"><span>Забронировать</span></button>
+							<button class="card__btn js-order__btn btn btn--blue"><span>Забронировать</span></button>
 						</div>
 						<!--/item-->
 					</div>
 				</div>
 			</section>
 			<!--/section-->
-			<section class="section about">
+			<section class="section about" id="about">
 				<div class="section__in">
 					<div class="section__ttl">О нас</div>
 					<div class="about__descr">
@@ -1673,7 +1674,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section service">
+			<section class="section service" id="service">
 				<div class="section__in">
 					<div class="section__ttl">Услуги</div>
 					<div class="service__descr">
@@ -1799,7 +1800,7 @@
 					<!--/ item-->
 				</div>
 			</section>
-			<section class="section feed">
+			<section class="section feed" id="price">
 				<div class="feed__price">
 					<div class="feed__price-in">
 						<div class="section__ttl feed__ttl">Цены</div>
@@ -1847,7 +1848,7 @@
 					</div>
 				</div>
 			</section>
-			<div class="map__wrp">
+			<div class="map__wrp" id="contacts">
 				<div class="map__in">
 					<div class="map__info">
 						<div class="section__ttl">Наши контакты</div>
@@ -1903,6 +1904,7 @@
 			</footer>
 		</div>
 		<div class="grid-layout__overlay js-grid__overlay"></div>
+		<!--feed-->
 		<div class="popup">
 			<button type="button" class="popup__cross js-popup__close">
 				<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1912,7 +1914,7 @@
 			</button>
 			<div class="popup__in">
 				<form class="popup__form">
-					<div class="popup__ttl section__ttl">Закажите консультацию</div>
+					<div class="popup__ttl section__ttl">Забронируйте комплект</div>
 					<div class="section__subttl">Напишите нам и мы с удовольствием Вам&nbsp;ответим!</div>
 					<div class="form-group form-group--black">
 						<label class="form-label">Ваше имя:</label>
@@ -1939,6 +1941,50 @@
 				</form>
 			</div>
 		</div>
+		<!--/feed-->
+		<!--order-->
+		<div class="order">
+			<div class="order__in">
+				<button type="button" class="order__cross js-order__close">
+					<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<line x1="0.646447" y1="47.6464" x2="47.6464" y2="0.646445" stroke="white"/>
+						<path d="M47.6465 47.6465L0.646484 0.646484" stroke="white"/>
+					</svg>
+				</button>
+				<div class="order__slider">
+					<div class="order__slider-top owl-carousel">
+						<div class="order__slider-top-item" style="background-image: url(img/card__img_1.png);"></div>
+						<div class="order__slider-top-item" style="background-image: url(img/card__img_2.png);"></div>
+						<div class="order__slider-top-item" style="background-image: url(img/card__img_2.png);"></div>
+					</div>
+					<div class="order__slider-bot owl-carousel">
+						<div class="order__slider-bot-item" style="background-image: url(img/card__img_1.png);"></div>
+						<div class="order__slider-bot-item" style="background-image: url(img/card__img_2.png);"></div>
+						<div class="order__slider-bot-item" style="background-image: url(img/card__img_2.png);"></div>
+					</div>
+				</div>
+				<div class="order__info">
+					<div class="order__ttl">Pirelli Scorpion All Terrain Plus 245/70 R16 111T XL</div>
+					<div class="order__info">
+						<div class="order__info-item">
+							<span>Ширина профиля:</span>
+							<span>245</span>
+						</div>
+						<div class="order__info-item">
+							<span>Высота профиля:</span>
+							<span>70</span>
+						</div>
+					</div>
+					<div class="order__info-ttl">Производитель:</div>
+					<img class="order__logo" src="img/card__label.png" alt="order label">
+					<div class="order__info-ttl">Зимняя шипованная</div>
+					<img class="order__icon" src="img/card__icon_1.png" alt="order icon">
+					<div class="order__price">9000 ₽</div>
+					<button class="order__btn js-popup__open btn btn--blue"><span>Забронировать</span></button>
+				</div>
+			</div>
+		</div>
+		<!--/order-->
 	</div>
 	<script src="js/libs.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
